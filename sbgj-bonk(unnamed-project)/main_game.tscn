@@ -41,14 +41,12 @@ polygon = PackedVector2Array(-100, -82, 131, -82, 133, 81, -99, 81)
 [node name="headline_text" type="Label" parent="headline"]
 offset_left = -98.9213
 offset_top = -82.0
-offset_right = 131.0787
-offset_bottom = 12.0
+offset_right = 131.60187
+offset_bottom = 74.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "cat shelters in [local area] are 
-overrun after christmas 
-magic dissapears.
-https://news.com/catpocalyp
-se_after_christmas/"
+theme_override_font_sizes/font_size = 15
+text = "cat shelters in [local area] are overrun after christmas magic dissapears. https://news.com/catpocalypse_after_christmas/"
+autowrap_mode = 3
 clip_text = true
 
 [node name="post" type="Polygon2D" parent="headline"]
