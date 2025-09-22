@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://ch3su8g5bqec0"]
+
+[ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
+[ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="user" type="Node" parent="."]
+
+[node name="user_background" type="Polygon2D" parent="user"]
+modulate = Color(1, 0.67058825, 1, 1)
+position = Vector2(143, 299)
+polygon = PackedVector2Array(-112, -244, 102, -245, 104, 235, -112, 235)
+
+[node name="user_details" type="Label" parent="user/user_background"]
+offset_left = -112.0
+offset_top = -129.0
+offset_right = 103.0
+offset_bottom = -52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Talia she/her
+mum of 3 cute cats"
+
+[node name="CatPerson" type="Sprite2D" parent="user"]
+position = Vector2(138.06252, 112)
+scale = Vector2(0.09282766, 0.08892746)
+texture = ExtResource("1_d2op2")
+
+[node name="post" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(700.00006, 139)
+scale = Vector2(0.8594007, 1)
+polygon = PackedVector2Array(-100, -82, 131, -82, 133, 81, -99, 81)
+script = ExtResource("2_0rdsr")
+
+[node name="PeekingCat" type="Sprite2D" parent="post"]
+position = Vector2(16.942505, -14.674061)
+scale = Vector2(0.13198397, 0.10289207)
+texture = ExtResource("3_ipu61")
+
+[node name="Label" type="Label" parent="post"]
+offset_left = -97.74247
+offset_top = 53.0
+offset_right = 131.48703
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DailyCats: 👀"
+
+[node name="Button" type="Button" parent="post"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -100.06975
+offset_top = -82.0
+offset_right = -92.06975
+offset_bottom = -74.0
+scale = Vector2(29.187737, 20.391302)
+
+[node name="headline" type="Polygon2D" parent="."]
+z_index = 2
+position = Vector2(450.99994, 139)
+scale = Vector2(0.92703867, 1)
+polygon = PackedVector2Array(-100, -82, 131, -82, 133, 81, -99, 81)
+
+[node name="headline_text" type="Label" parent="headline"]
+offset_left = -98.9213
+offset_top = -82.0
+offset_right = 131.60187
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "cat shelters in [local area] are overrun after christmas magic dissapears. https://news.com/catpocalypse_after_christmas/"
+autowrap_mode = 3
+clip_text = true
+
+[connection signal="button_down" from="post/Button" to="post" method="_on_button_button_down"]
+[connection signal="button_up" from="post/Button" to="post" method="_on_button_button_up"]
