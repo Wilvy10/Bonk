@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ch3su8g5bqec0"]
 
-[ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://cat_person.png" id="1_yx7mw"]
-[ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://peeking_cat.png" id="2_ykeeq"]
+[ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_yx7mw"]
+[ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="2_ykeeq"]
 
 [node name="Node2D" type="Node2D"]
 
