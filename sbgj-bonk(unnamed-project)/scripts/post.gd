@@ -21,5 +21,5 @@ func _on_button_button_up() -> void:
 	dragging = false
 	if (true):
 		position = startPosition
-func check_in_dropbox():
+#func check_in_dropbox():
 	
