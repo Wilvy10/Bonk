@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://bis7em4d36saf"]
+[gd_scene load_steps=4 format=3 uid="uid://bis7em4d36saf"]
 
+[ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://main.gd" id="1_ykeeq"]
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_yx7mw"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="2_ykeeq"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ykeeq")
 
 [node name="user" type="Node" parent="."]
 
