@@ -6,6 +6,7 @@ var startPosition = Vector2(0,0)
 var collision = false
 var happiness = 0
 
+
 func _init():
 	#spawn at appropriate place
 	startPosition = position
@@ -15,7 +16,11 @@ func _process(delta):
 	if dragging:
 		position = get_global_mouse_position() - _offset
 	
+	
+func setStartPosition(location:Vector2 ):
+	startPosition = location
 
+ 
 func _on_button_button_down() -> void:
 	dragging = true
 	_offset = get_global_mouse_position() - global_position

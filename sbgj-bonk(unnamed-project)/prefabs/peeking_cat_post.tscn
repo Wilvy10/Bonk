@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh7pvjteorjrm"]
+
+[ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_2cv18"]
+[ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="2_kh0xi"]
+
+[node name="post" type="Polygon2D"]
+z_index = 2
+scale = Vector2(0.8594007, 1)
+polygon = PackedVector2Array(-100, -82, 131, -82, 129.37, 135.45, -100.21, 137.87)
+script = ExtResource("1_2cv18")
+
+[node name="PeekingCat" type="Sprite2D" parent="."]
+position = Vector2(16.942505, -14.674061)
+scale = Vector2(0.13198397, 0.10289207)
+texture = ExtResource("2_kh0xi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -97.74247
+offset_top = 53.0
+offset_right = 131.48703
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DailyCats: 👀"
+
+[node name="Label2" type="Label" parent="."]
+offset_left = -97.742615
+offset_top = 81.0
+offset_right = 130.32318
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Happiness: + 1"
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -98.90622
+offset_top = -82.0
+offset_right = -90.90622
+offset_bottom = -71.309166
+scale = Vector2(29.187737, 20.391302)
+
+[node name="Area2D" type="Area2D" parent="." groups=["posts"]]
+collision_layer = 0
+
+[node name="postCollision" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-101.23346, -83, -101.23346, 139, 134.97772, 137, 137.30487, -84)
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
