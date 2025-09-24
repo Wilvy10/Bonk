@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="SBGJ-Bonk(unnamed_project)"
-run/main_scene="res://scenes/main_game.tscn"
+run/main_scene="uid://yq3amqpq6k4p"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
-Main="*res://main.gd"
+Main="*res://scripts/main.gd"
 
 [rendering]
 

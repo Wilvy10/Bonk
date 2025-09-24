@@ -3,6 +3,8 @@ extends Polygon2D
 var dragging = false
 var _offset = Vector2(0,0)
 var startPosition = Vector2(0,0)
+var endPosition = Vector2(0,0)
+var in_drpbox = false
 func _init():
 	#spawn at appropriate place
 	startPosition = position
@@ -11,6 +13,7 @@ func _init():
 func _process(delta):
 	if dragging:
 		position = get_global_mouse_position() - _offset
+	
 
 func _on_button_button_down() -> void:
 	dragging = true
@@ -21,5 +24,7 @@ func _on_button_button_up() -> void:
 	dragging = false
 	if (true):
 		position = startPosition
+	
+		
 #func check_in_dropbox():
 	
