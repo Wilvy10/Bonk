@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=6 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scenes/drop_box.gd" id="4_0rdsr"]
+[ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/spawner.gd" id="5_ipu61"]
 
 [node name="Node2D" type="Node2D"]
 
