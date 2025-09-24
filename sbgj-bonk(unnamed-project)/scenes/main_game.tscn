@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=9 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
-[ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scenes/user.gd" id="1_ygxny"]
+[ext_resource type="Script" path="res://scenes/user.gd" id="1_ygxny"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
 [ext_resource type="Script" uid="uid://bt05dq5eiet1v" path="res://scenes/happiness_meter.gd" id="2_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
@@ -52,7 +52,6 @@ scale = Vector2(0.09282766, 0.08892746)
 texture = ExtResource("1_d2op2")
 
 [node name="post" type="Polygon2D" parent="."]
-visible = false
 z_index = 2
 position = Vector2(700.00006, 139)
 scale = Vector2(0.8594007, 1)

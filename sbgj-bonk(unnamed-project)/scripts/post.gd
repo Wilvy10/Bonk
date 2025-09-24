@@ -34,7 +34,7 @@ func _on_button_button_up() -> void:
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	collision = true
-	happiness + 10
+	happiness += 10
 	print("in box")
 	
 
@@ -43,7 +43,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	collision = false
 	
-	happiness - 10
+	happiness -= 10
 	print("out of box")
 	
 func get_happiness():
