@@ -1,5 +1,5 @@
 extends Polygon2D
-var dropposition = Vector2(0,0)
+var dropposition = Vector2(-12.0,-14.0)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
