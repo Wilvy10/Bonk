@@ -53,7 +53,7 @@ clip_text = true
 
 [node name="post" type="Polygon2D" parent="headline"]
 z_index = 2
-position = Vector2(266.43982, -4)
+position = Vector2(307.43063, -9)
 scale = Vector2(0.92703867, 1)
 polygon = PackedVector2Array(-101.80558, -83.26585, 132.78229, -83.26585, 131.14148, 109, 18.504211, 106.99997, -100.23328, 107)
 uv = PackedVector2Array(-101.80558, -83.26585, 132.78229, -83.26585, 131.14148, 109, 18.504211, 106.99997, -100.23328, 107)
@@ -64,17 +64,17 @@ scale = Vector2(0.13198397, 0.10289207)
 texture = ExtResource("2_ykeeq")
 
 [node name="Label" type="Label" parent="headline/post"]
-offset_left = -97.74247
-offset_top = 53.0
-offset_right = 131.48703
-offset_bottom = 76.0
+offset_left = -100.06967
+offset_top = 59.0
+offset_right = 129.15982
+offset_bottom = 82.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "DailyCats!"
 
 [node name="Label2" type="Label" parent="headline/post"]
-offset_left = -97.74247
-offset_top = 80.0
-offset_right = 131.48703
-offset_bottom = 103.0
+offset_left = -98.90613
+offset_top = 84.0
+offset_right = 130.32336
+offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0.90588236, 0, 1)
 text = "Happiness: +1"
