@@ -1,9 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bq5bj0fhh6ud0"]
 
 [ext_resource type="Script" uid="uid://byiade1vg0pc3" path="res://scripts/menu.gd" id="1_uubjt"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
-bg_color = Color(1, 1, 1, 1)
+[ext_resource type="Texture2D" uid="uid://b6ckrw1k1hrg8" path="res://images/Background and UI/title_screen.png" id="2_5yleq"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -14,14 +12,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uubjt")
 
-[node name="place holder background" type="Panel" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5yleq")
+texture = ExtResource("2_5yleq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
