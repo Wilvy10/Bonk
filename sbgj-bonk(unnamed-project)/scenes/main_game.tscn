@@ -64,8 +64,8 @@ position = Vector2(170, 338)
 polygon = PackedVector2Array(-112, -244, 102, -245, 104, 235, -112, 235)
 
 [node name="CatPerson" type="Sprite2D" parent="user"]
-position = Vector2(165.06252, 151)
-scale = Vector2(0.09282766, 0.08892746)
+position = Vector2(176.50002, 196)
+scale = Vector2(0.10980903, 0.16666666)
 texture = ExtResource("1_d2op2")
 
 [node name="post" type="Polygon2D" parent="."]
