@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://57qjjfgs6mie"
+path="res://.godot/imported/Angry Ending - Cat Lover.ogg-1d27311b26d90677d7372f7c13ac70b2.oggvorbisstr"
+
+[deps]
+
+source_file="res://images/Animations/Angry Ending - Cat Lover.ogg"
+dest_files=["res://.godot/imported/Angry Ending - Cat Lover.ogg-1d27311b26d90677d7372f7c13ac70b2.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
