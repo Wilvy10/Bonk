@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://crt3ng6svcetp"]
+[gd_scene load_steps=3 format=3 uid="uid://crt3ng6svcetp"]
+
+[ext_resource type="Texture2D" uid="uid://b6ckrw1k1hrg8" path="res://images/Background and UI/title_screen.png" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://d3suofgkkgokv" path="res://scenes/quit.gd" id="2_r6d6q"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,6 +10,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(575, 324)
+texture = ExtResource("1_5p8wc")
 
 [node name="fullscreen" type="CheckButton" parent="."]
 layout_mode = 0
@@ -22,4 +29,7 @@ offset_left = 40.0
 offset_top = 24.0
 offset_right = 125.0
 offset_bottom = 108.0
-text = "X"
+text = "Exit"
+script = ExtResource("2_r6d6q")
+
+[connection signal="pressed" from="quit" to="quit" method="_on_pressed"]
