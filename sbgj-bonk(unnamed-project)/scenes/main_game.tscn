@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=10 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
-[ext_resource type="Script" path="res://scenes/user.gd" id="1_ygxny"]
+[ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scenes/user.gd" id="1_ygxny"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
 [ext_resource type="Script" uid="uid://bt05dq5eiet1v" path="res://scenes/happiness_meter.gd" id="2_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scenes/drop_box.gd" id="4_0rdsr"]
 [ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/generator.gd" id="5_ipu61"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70vka"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wi4c7")
@@ -52,6 +54,7 @@ scale = Vector2(0.09282766, 0.08892746)
 texture = ExtResource("1_d2op2")
 
 [node name="post" type="Polygon2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(700.00006, 139)
 scale = Vector2(0.8594007, 1)
@@ -106,7 +109,7 @@ offset_right = 132.36118
 offset_bottom = 76.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
-text = "cat shelters in [local area] are overrun after christmas magic dissapears. https://news.com/catpocalypse_after_christmas/"
+text = "cat shelters in [local area] are overrun after christmas magic disappears. https://news.com/catpocalypse_after_christmas/"
 autowrap_mode = 3
 clip_text = true
 metadata/_edit_use_anchors_ = true
@@ -125,10 +128,15 @@ priority = 1
 position = Vector2(-12, -14)
 polygon = PackedVector2Array(275, 59, 276, 528, 597, 528, 593, 57)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drop box/Area2D"]
+position = Vector2(419, 152.00002)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_70vka")
+
 [node name="postGenerator" type="Node2D" parent="."]
 script = ExtResource("5_ipu61")
 
-[node name="refresh button" type="Button" parent="."]
+[node name="refresh_button" type="Button" parent="."]
 offset_left = 1043.0
 offset_top = 12.0
 offset_right = 1083.0
@@ -144,3 +152,4 @@ text = "refresh"
 [connection signal="body_exited" from="drop box/Area2D" to="post" method="_on_area_2d_body_exited"]
 [connection signal="mouse_entered" from="drop box/Area2D" to="post" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="drop box/Area2D" to="post" method="_on_area_2d_mouse_exited"]
+[connection signal="button_up" from="refresh_button" to="drop box" method="_on_refresh_button_button_up"]

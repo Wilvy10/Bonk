@@ -2,7 +2,7 @@ extends Node2D
 #instance object post with value of random (0 to final post)
 #have list of posts to pull from
 
-var locations = [Vector2(1000,100),Vector2(1000,300)]
+var locations = [Vector2(1000,200),Vector2(1000,500)]
 var post_0 = preload("res://prefabs/peeking_cat_post.tscn")
 var user = 1
 var catPostsNum = 1

@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://yq3amqpq6k4p"]
+[gd_scene load_steps=7 format=3 uid="uid://yq3amqpq6k4p"]
 
 [ext_resource type="Script" uid="uid://byiade1vg0pc3" path="res://scripts/menu.gd" id="1_xdvgc"]
+[ext_resource type="Texture2D" uid="uid://c8h2r8wf4xqw2" path="res://images/Background and UI/quit_button.png" id="2_11y2r"]
+[ext_resource type="Texture2D" uid="uid://b6ckrw1k1hrg8" path="res://images/Background and UI/title_screen.png" id="3_o0tnf"]
+[ext_resource type="Texture2D" uid="uid://barhbroelm7ci" path="res://images/Background and UI/settings_button.png" id="4_jmdev"]
+[ext_resource type="Texture2D" uid="uid://3svrgps0k2nt" path="res://images/Background and UI/start_button.png" id="5_b6cxs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
 bg_color = Color(1, 1, 1, 1)
@@ -37,21 +41,52 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 22
 
-[node name="start button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "Start "
+[node name="TitleScreen" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(243, -24)
+texture = ExtResource("3_o0tnf")
 
-[node name="settings button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "Settings"
+[node name="QuitButton" type="Sprite2D" parent="."]
+position = Vector2(500, 580)
+texture = ExtResource("2_11y2r")
 
-[node name="exit button" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="exit button" type="Button" parent="QuitButton"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -175.0
+offset_top = -40.0
+offset_right = 311.0
+offset_bottom = 38.0
+scale = Vector2(0.72, 1)
 theme_override_font_sizes/font_size = 51
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/start button" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/settings button" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/exit button" to="." method="_on_exit_pressed"]
+[node name="SettingsButton" type="Sprite2D" parent="."]
+position = Vector2(600, 480)
+texture = ExtResource("4_jmdev")
+
+[node name="settings button" type="Button" parent="SettingsButton"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -178.0
+offset_top = -40.0
+offset_right = 308.0
+offset_bottom = 38.0
+scale = Vector2(0.72987014, 1)
+theme_override_font_sizes/font_size = 51
+text = "Settings"
+
+[node name="StartButton" type="Sprite2D" parent="."]
+position = Vector2(700, 380)
+texture = ExtResource("5_b6cxs")
+
+[node name="start button" type="Button" parent="StartButton"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -178.0
+offset_top = -40.0
+offset_right = 308.0
+offset_bottom = 38.0
+scale = Vector2(0.7287671, 1)
+theme_override_font_sizes/font_size = 51
+text = "Start "
+
+[connection signal="pressed" from="QuitButton/exit button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="SettingsButton/settings button" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="StartButton/start button" to="." method="_on_start_pressed"]
