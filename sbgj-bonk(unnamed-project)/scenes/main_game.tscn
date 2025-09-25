@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=11 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
 [ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scripts/user.gd" id="1_ygxny"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://c4nbc84tdhl3i" path="res://images/Background and UI/desktop_background.png" id="2_nqdth"]
 [ext_resource type="Script" uid="uid://bt05dq5eiet1v" path="res://scripts/happiness_meter.gd" id="2_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scripts/drop_box.gd" id="4_0rdsr"]
@@ -14,42 +15,50 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wi4c7")
 
+[node name="DesktopBackground" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_nqdth")
+
 [node name="user" type="Node" parent="."]
 script = ExtResource("1_ygxny")
 
-[node name="user_background" type="Polygon2D" parent="user"]
-modulate = Color(1, 0.67058825, 1, 1)
-position = Vector2(143, 299)
-polygon = PackedVector2Array(-112, -244, 102, -245, 104, 235, -112, 235)
-
-[node name="user_details" type="Label" parent="user/user_background"]
-offset_left = -112.0
-offset_top = -129.0
-offset_right = 103.0
-offset_bottom = -52.0
+[node name="user_details" type="Label" parent="user"]
+offset_left = 50.0
+offset_top = 309.0
+offset_right = 265.0
+offset_bottom = 386.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Talia she/her
 mum of 3 cute cats"
+metadata/_edit_use_anchors_ = true
 
-[node name="Happiness" type="Label" parent="user/user_background"]
-offset_left = -110.0
-offset_top = -74.0
-offset_right = -21.0
-offset_bottom = -50.0
+[node name="Happiness" type="Label" parent="user"]
+offset_left = 52.0
+offset_top = 364.0
+offset_right = 141.0
+offset_bottom = 388.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Happiness:"
+metadata/_edit_use_anchors_ = true
 
-[node name="happiness meter" type="Label" parent="user/user_background"]
-offset_left = -13.0
-offset_top = -72.0
-offset_right = 76.0
-offset_bottom = -48.0
+[node name="happiness meter" type="Label" parent="user"]
+offset_left = 149.0
+offset_top = 366.0
+offset_right = 238.0
+offset_bottom = 390.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "0"
 script = ExtResource("2_wi4c7")
+metadata/_edit_use_anchors_ = true
+
+[node name="user_background" type="Polygon2D" parent="user"]
+visible = false
+modulate = Color(1, 0.67058825, 1, 1)
+position = Vector2(170, 338)
+polygon = PackedVector2Array(-112, -244, 102, -245, 104, 235, -112, 235)
 
 [node name="CatPerson" type="Sprite2D" parent="user"]
-position = Vector2(138.06252, 112)
+position = Vector2(165.06252, 151)
 scale = Vector2(0.09282766, 0.08892746)
 texture = ExtResource("1_d2op2")
 
@@ -116,7 +125,7 @@ clip_text = true
 metadata/_edit_use_anchors_ = true
 
 [node name="drop box" type="Polygon2D" parent="."]
-position = Vector2(-12, -14)
+position = Vector2(75, 30)
 polygon = PackedVector2Array(273, 57, 593, 58, 596, 532, 271, 531)
 script = ExtResource("4_0rdsr")
 

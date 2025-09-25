@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwcnqsrv7jncl"]
+
+[ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_tc63t"]
+[ext_resource type="Texture2D" uid="uid://d3cd0oa6q2fqr" path="res://images/Post Icons/Post_Stare.png" id="2_oiy08"]
+[ext_resource type="Script" uid="uid://c8hpra03scb3f" path="res://prefabs/post_stare.gd" id="3_oiy08"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
+size = Vector2(19.235422, 19.63567)
+
+[node name="starePost" type="Node2D"]
+script = ExtResource("1_tc63t")
+
+[node name="PostStare" type="Sprite2D" parent="."]
+position = Vector2(0.5, -46.5)
+texture = ExtResource("2_oiy08")
+script = ExtResource("3_oiy08")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -102.5
+offset_top = 55.500015
+offset_right = 101.5
+offset_bottom = 136.5
+scale = Vector2(1.0117038, 1.1164016)
+color = Color(0.627451, 1, 1, 1)
+
+[node name="flavourText" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = -2.8252602e-05
+offset_top = -1.5258789e-05
+offset_right = 204.99997
+offset_bottom = 109.999985
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do "
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -103.0
+offset_top = -150.0
+offset_right = -95.0
+offset_bottom = -142.0
+scale = Vector2(26.000011, 37.05496)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-72, -142)
+scale = Vector2(4.92, 1)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(14.735774, 140)
+scale = Vector2(2.1872756, 15.074606)
+shape = SubResource("RectangleShape2D_tc63t")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

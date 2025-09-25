@@ -1,4 +1,4 @@
-extends Polygon2D
+extends Node2D
 
 var dragging = false
 var _offset = Vector2(0,0)
@@ -35,6 +35,7 @@ func _process(delta):
 	
 func setStartPosition(location:Vector2 ):
 	startPosition = location
+	print(startPosition)
 	
 
 func _enter_tree() -> void:
@@ -56,8 +57,9 @@ func _on_button_button_up() -> void:
 		dragging = false
 		if (collision == false):
 			position = startPosition
+			print(startPosition)
 		else:
-			
+			position = startPosition
 			dropBoxLocation = dropBox.setPostLocation()
 			if dropBoxLocation != null:
 				selected = true
@@ -68,7 +70,7 @@ func onRefresh():
 		if (dropBox.checkFull()):
 			#feed is ready to be sent
 			#dropBox.releasePostLocation(dropBoxLocation)
-			get_node("/root/Node2D/user/user_background/happiness meter").AddHappiness(happiness)
+			get_node("/root/Node2D/user/happiness meter").AddHappiness(happiness)
 			selected = false
 			onFeed = true
 			transform.origin -= transform.y * 300
@@ -92,3 +94,6 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 	
 func get_happiness():
 	return happiness
+
+func set_happiness(_happiness):
+	happiness = _happiness
