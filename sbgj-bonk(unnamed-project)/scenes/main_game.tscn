@@ -97,6 +97,7 @@ collision_layer = 2
 polygon = PackedVector2Array(-101.23346, -83, -101.23346, 139, 134.97772, 137, 137.30487, -84)
 
 [node name="headline" type="Polygon2D" parent="."]
+visible = false
 z_index = 2
 position = Vector2(696, 399)
 scale = Vector2(0.92703867, 1)
