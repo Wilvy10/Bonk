@@ -12,6 +12,7 @@ var dropBoxLocation = Vector2(0,0)
 
 func _init():
 	#spawn at appropriate place
+	print($sfx_notif)
 	startPosition = position
 	print(startPosition)
 	
@@ -70,6 +71,11 @@ func onRefresh():
 		if (dropBox.checkFull()):
 			#feed is ready to be sent
 			#dropBox.releasePostLocation(dropBoxLocation)
+			print($sfx_notif)
+			if $sfx_notif:
+				$sfx_notif.play()
+			else:
+				print("Sound effect not assigned")
 			get_node("/root/Node2D/user/happiness meter").AddHappiness(happiness)
 			selected = false
 			onFeed = true
