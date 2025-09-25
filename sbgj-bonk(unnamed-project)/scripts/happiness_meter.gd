@@ -22,5 +22,5 @@ func happyendingcon():
 
 #rage ending condition
 func rageendingcon():
-	if happiness == -10:
-		get_tree().change_scene_to_file("res://scenes/rageending.tscn")
+	pass
+		#get_tree().change_scene_to_file("res://scenes/rageending.tscn")
