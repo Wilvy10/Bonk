@@ -4,7 +4,7 @@ var dragging = false
 var _offset = Vector2(0,0)
 var startPosition = Vector2(0,0)
 var collision = false
-var happiness = 1
+var happiness = +1
 var selected = false
 var onFeed = false
 var dropBox = Node
@@ -78,7 +78,7 @@ func onRefresh():
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	collision = true
-	#happiness += 10
+	
 	print("in box")
 	
 
@@ -87,7 +87,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	collision = false
 	
-	#happiness -= 10
+	
 	print("out of box")
 	
 func get_happiness():

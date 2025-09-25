@@ -2,11 +2,11 @@
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
-[ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scenes/user.gd" id="1_ygxny"]
+[ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scripts/user.gd" id="1_ygxny"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
-[ext_resource type="Script" uid="uid://bt05dq5eiet1v" path="res://scenes/happiness_meter.gd" id="2_wi4c7"]
+[ext_resource type="Script" uid="uid://bt05dq5eiet1v" path="res://scripts/happiness_meter.gd" id="2_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
-[ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scenes/drop_box.gd" id="4_0rdsr"]
+[ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scripts/drop_box.gd" id="4_0rdsr"]
 [ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/generator.gd" id="5_ipu61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70vka"]

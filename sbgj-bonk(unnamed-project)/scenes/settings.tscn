@@ -18,8 +18,8 @@ text = "fullscreen"
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 295.0
-offset_right = 629.0
-offset_bottom = 379.0
-text = "quit"
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 125.0
+offset_bottom = 108.0
+text = "X"
