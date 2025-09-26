@@ -15,7 +15,7 @@ func _ready() -> void:
 func AddHappiness(_happiness):
 	happiness += _happiness
 	set_text("Happiness: " + str(happiness))
-	get_parent.check()
+	get_parent().check()
 	
 func get_happiness():
 	return happiness
