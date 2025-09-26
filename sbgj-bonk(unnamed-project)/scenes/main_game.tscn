@@ -253,7 +253,9 @@ offset_right = 871.0
 offset_bottom = 447.0
 text = "Once you have selected the post, click the refresh button to refresh their feed
 
-press space to continue"
+press space to continue
+
+press escape to exit"
 autowrap_mode = 2
 
 [connection signal="button_down" from="post/Button" to="post" method="_on_button_button_down"]
