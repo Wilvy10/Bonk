@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=22 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
@@ -54,22 +54,24 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="rage meter" type="Label" parent="user"]
-offset_left = 53.0
-offset_top = 389.0
-offset_right = 142.0
-offset_bottom = 413.0
+offset_left = 132.0
+offset_top = 463.0
+offset_right = 221.0
+offset_bottom = 487.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Rage: 0"
+horizontal_alignment = 1
 script = ExtResource("5_vnsdt")
 metadata/_edit_use_anchors_ = true
 
 [node name="happiness meter" type="Label" parent="user"]
-offset_left = 51.0
-offset_top = 366.0
-offset_right = 140.0
-offset_bottom = 390.0
+offset_left = 128.0
+offset_top = 434.0
+offset_right = 227.0
+offset_bottom = 458.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Happiness: 0"
+vertical_alignment = 1
 script = ExtResource("2_wi4c7")
 metadata/_edit_use_anchors_ = true
 

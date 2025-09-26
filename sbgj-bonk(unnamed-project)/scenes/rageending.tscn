@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbxuce3ddsmh3"]
+[gd_scene load_steps=3 format=3 uid="uid://dgpbpjjq5d5j1"]
+
+[ext_resource type="Texture2D" uid="uid://2bfth508tpi2" path="res://images/Background and UI/RageEndingStill.png" id="1_rlqo1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cikoh"]
 font_size = 53
@@ -10,6 +12,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="RageEndingStill" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("1_rlqo1")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
