@@ -19,11 +19,11 @@ func check():
 	if (happiness - rage >=5):
 		var texture = load('res://images/Person Icons/Person CL Happy.png')
 		get_node("PersonClNeutral").texture = texture
-	elif (rage -happiness >= 5):
-		var texture = load('res://images/Person Icons/Person CL Neutral.png')
+	elif (rage - happiness >= 5):
+		var texture = load('res://images/Person Icons/Person CL Angry.png')
 		get_node("PersonClNeutral").texture = texture
 	else:
-		var texture = load('res://images/Person Icons/Person CL Angry.png')
+		var texture = load('res://images/Person Icons/Person CL Neutral.png')
 		get_node("PersonClNeutral").texture = texture
 func endGame():
 	happiness = get_node("happiness meter").get_happiness()

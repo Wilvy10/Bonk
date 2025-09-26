@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_nn8tk"]
 [ext_resource type="Texture2D" uid="uid://bjllnfk8csi2e" path="res://images/Post Icons/Post Microwave.png" id="2_nn8tk"]
-[ext_resource type="Script" path="res://prefabs/post_microwave.gd" id="3_nn8tk"]
+[ext_resource type="Script" uid="uid://bydd6rolx1wmg" path="res://prefabs/post_microwave.gd" id="3_nn8tk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)
@@ -19,7 +19,7 @@ script = ExtResource("3_nn8tk")
 offset_left = -103.00001
 offset_top = 56.0
 offset_right = 100.99999
-offset_bottom = 136.99998
+offset_bottom = 188.73676
 scale = Vector2(1.0145473, 1.1074551)
 color = Color(0.05882353, 0.13333334, 0.16470589, 1)
 
