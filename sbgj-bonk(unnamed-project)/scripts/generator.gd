@@ -77,4 +77,4 @@ func resetAvailablePosts():
 		catPosts[i][1] = false
 		
 func ending():
-	pass
+	get_node("/root/Node2D/user").endGame()

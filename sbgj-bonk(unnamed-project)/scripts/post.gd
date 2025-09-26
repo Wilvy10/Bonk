@@ -5,6 +5,7 @@ var _offset = Vector2(0,0)
 var startPosition = Vector2(0,0)
 var collision = false
 var happiness = +1
+var rage = 0
 var selected = false
 var onFeed = false
 var dropBox = Node
@@ -53,6 +54,7 @@ func _enter_tree() -> void:
 	refreshButton.button_up.connect(onRefresh)
 	dropBox = get_node("/root/Node2D/drop box")
 	sfx_notif = get_node("/root/Node2D/sfx_notif")
+	#set_rage(get_child(0).rage)
 
 func _on_button_button_down() -> void:
 	if !onFeed:
@@ -87,6 +89,7 @@ func onRefresh():
 			else:
 				print("Sound effect not assigned")
 			get_node("/root/Node2D/user/happiness meter").AddHappiness(happiness)
+			get_node("/root/Node2D/user/rage meter").AddRage(rage)
 			selected = false
 			onFeed = true
 			transform.origin -= transform.y * 500
@@ -116,6 +119,10 @@ func get_happiness():
 func set_happiness(_happiness):
 	happiness = _happiness
 
+func get_rage():
+	return rage
+func set_rage(_rage):
+	rage= _rage
 
 func _on_timer_timeout() -> void:
 	#after timer 
