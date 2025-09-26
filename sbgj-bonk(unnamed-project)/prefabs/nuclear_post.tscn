@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwcnqsrv7jncl"]
+[gd_scene load_steps=5 format=3 uid="uid://d3a85f2eiuv00"]
 
-[ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_tc63t"]
-[ext_resource type="Texture2D" uid="uid://d3cd0oa6q2fqr" path="res://images/Post Icons/Post_Stare.png" id="2_oiy08"]
-[ext_resource type="Script" uid="uid://c8hpra03scb3f" path="res://prefabs/post_stare.gd" id="3_oiy08"]
+[ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_rqo1e"]
+[ext_resource type="Texture2D" uid="uid://jvnfce43l4ux" path="res://images/Post Icons/Post Nuclear.png" id="2_rqo1e"]
+[ext_resource type="Script" uid="uid://d1kq1wmaj1u75" path="res://prefabs/post_nuclear.gd" id="3_rqo1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)
 
-[node name="starePost" type="Node2D"]
-script = ExtResource("1_tc63t")
+[node name="nuclearPost" type="Node2D"]
+script = ExtResource("1_rqo1e")
 
-[node name="PostStare" type="Sprite2D" parent="."]
+[node name="PostNuclear" type="Sprite2D" parent="."]
 position = Vector2(0.5, -46.5)
-texture = ExtResource("2_oiy08")
-script = ExtResource("3_oiy08")
+texture = ExtResource("2_rqo1e")
+script = ExtResource("3_rqo1e")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -103.00001
@@ -39,8 +39,8 @@ offset_right = 210.43637
 offset_bottom = 110.44785
 scale = Vector2(0.9209255, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Local Cat Stuck a nose up the camera
-+ 5 Happiness"
+text = "Say goodbye it's the end of the world!
++ 5 Rage"
 horizontal_alignment = 1
 autowrap_mode = 2
 
