@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=18 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scripts/drop_box.gd" id="4_0rdsr"]
 [ext_resource type="Texture2D" uid="uid://c1d6nbupbwust" path="res://images/Background and UI/desktop_background_hole.png" id="4_o6v7o"]
 [ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/generator.gd" id="5_ipu61"]
+[ext_resource type="Texture2D" uid="uid://b63dye5654nqb" path="res://images/Person Icons/Person CL Neutral.png" id="7_ihbck"]
 [ext_resource type="AudioStream" uid="uid://dea6wmbrrbqf1" path="res://sounds/notification.mp3" id="11_5cypo"]
 [ext_resource type="Texture2D" uid="uid://yuta8eiv1p3a" path="res://images/Background and UI/refresh button.png" id="11_o6v7o"]
 [ext_resource type="Script" uid="uid://die6xb5l0xim8" path="res://scenes/settings.gd" id="13_sp04v"]
@@ -69,9 +70,15 @@ position = Vector2(170, 338)
 polygon = PackedVector2Array(-112, -244, 102, -245, 104, 235, -112, 235)
 
 [node name="CatPerson" type="Sprite2D" parent="user"]
+visible = false
 position = Vector2(176.50002, 196)
 scale = Vector2(0.10980903, 0.16666666)
 texture = ExtResource("1_d2op2")
+
+[node name="PersonClNeutral" type="Sprite2D" parent="user"]
+position = Vector2(176, 195)
+scale = Vector2(1.24, 1.06)
+texture = ExtResource("7_ihbck")
 
 [node name="post" type="Polygon2D" parent="."]
 visible = false

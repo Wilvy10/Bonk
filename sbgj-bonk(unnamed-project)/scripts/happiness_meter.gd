@@ -17,7 +17,7 @@ func AddHappiness(_happiness):
 	
 #happy ending condition 
 func happyendingcon():
-	if happiness == 10:
+	if happiness >= 10:
 		get_tree().change_scene_to_file("res://scenes/happyending.tscn")
 
 #rage ending condition
