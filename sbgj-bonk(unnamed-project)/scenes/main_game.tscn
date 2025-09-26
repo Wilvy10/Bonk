@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=13 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scripts/drop_box.gd" id="4_0rdsr"]
 [ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/generator.gd" id="5_ipu61"]
+[ext_resource type="AudioStream" uid="uid://dea6wmbrrbqf1" path="res://sounds/notification.mp3" id="11_5cypo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70vka"]
 
@@ -159,6 +160,9 @@ offset_top = 12.0
 offset_right = 1083.0
 offset_bottom = 48.0
 text = "refresh"
+
+[node name="sfx_notif" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_5cypo")
 
 [connection signal="button_down" from="post/Button" to="post" method="_on_button_button_down"]
 [connection signal="button_up" from="post/Button" to="post" method="_on_button_button_up"]
