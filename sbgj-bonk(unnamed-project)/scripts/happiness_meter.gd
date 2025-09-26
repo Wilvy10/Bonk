@@ -1,9 +1,10 @@
 extends Label
 
 var happiness = 0
+var rage = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_text(str(happiness))
+	set_text("Happiness: " + str(happiness))
 	pass # Replace with function body.
 
 
@@ -13,14 +14,18 @@ func _ready() -> void:
 	
 func AddHappiness(_happiness):
 	happiness += _happiness
-	set_text(str(happiness))
+	set_text("Happiness: " + str(happiness))
 	
+func get_happiness():
+	return happiness
+
 #happy ending condition 
-func happyendingcon():
-	if happiness >= 10:
-		get_tree().change_scene_to_file("res://scenes/happyending.tscn")
+#func happyendingcon():
+	#if happiness >= 10:
+	#	get_tree().change_scene_to_file("res://scenes/happyending.tscn")
 
 #rage ending condition
-func rageendingcon():
-	pass
+#func rageendingcon():
+	#pass
+	#if rage >= 
 		#get_tree().change_scene_to_file("res://scenes/rageending.tscn")

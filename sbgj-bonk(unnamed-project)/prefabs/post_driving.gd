@@ -6,3 +6,4 @@ var stats = [happiness,rage]
 
 func _ready() -> void:
 	get_parent().set_happiness(happiness)
+	get_parent().set_rage(rage)

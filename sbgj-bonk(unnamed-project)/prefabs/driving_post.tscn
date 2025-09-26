@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_3vsp4"]
 [ext_resource type="Texture2D" uid="uid://d2lwpyuvwq0t1" path="res://images/Post Icons/Post DIMC.png" id="2_3vsp4"]
-[ext_resource type="Script" uid="uid://6esgvfv244vm" path="res://prefabs/post_driving.gd" id="3_3vsp4"]
+[ext_resource type="Script" path="res://prefabs/post_driving.gd" id="3_3vsp4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)
@@ -64,7 +64,6 @@ scale = Vector2(2.1872756, 15.074606)
 shape = SubResource("RectangleShape2D_tc63t")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
