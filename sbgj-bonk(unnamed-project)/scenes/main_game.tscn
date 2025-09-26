@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=19 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://cv4aoq1mb2duq" path="res://images/Background and UI/pause.png" id="14_ihbck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70vka"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ihbck"]
+font_size = 28
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wi4c7")
@@ -254,15 +257,26 @@ autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="settings"]
 z_index = 4
-offset_left = 629.0
-offset_top = 372.0
-offset_right = 871.0
-offset_bottom = 447.0
+offset_left = 625.0
+offset_top = 299.0
+offset_right = 867.0
+offset_bottom = 426.0
 text = "Once you have selected the post, click the refresh button to refresh their feed
 
+"
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="settings"]
+z_index = 4
+offset_left = 405.0
+offset_top = 468.0
+offset_right = 769.0
+offset_bottom = 650.0
+text = "
 press space to continue
 
 press escape to exit"
+label_settings = SubResource("LabelSettings_ihbck")
 autowrap_mode = 2
 
 [connection signal="button_down" from="post/Button" to="post" method="_on_button_button_down"]
