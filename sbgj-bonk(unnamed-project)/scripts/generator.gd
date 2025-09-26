@@ -3,11 +3,33 @@ extends Node2D
 #have list of posts to pull from
 
 var locations = [Vector2(1000,200),Vector2(1000,450)]
-var post_0 = [preload("res://prefabs/peeking_cat_post.tscn"),false]
-var post_1 = [preload("res://prefabs/stare_post.tscn"),false]
+var post_0 = [preload("res://prefabs/anti_cat_post.tscn"),false]
+var post_1 = [preload("res://prefabs/barrentwo_post.tscn"),false]
+var post_2 = [preload("res://prefabs/barren_post.tscn"),false]
+var post_3 = [preload("res://prefabs/conspire_post.tscn"),false]
+var post_4 = [preload("res://prefabs/driving_post.tscn"),false]
+var post_5 = [preload("res://prefabs/floodtwo_post.tscn"),false]
+var post_6 = [preload("res://prefabs/flood_post.tscn"),false]
+var post_7 = [preload("res://prefabs/guntwo_post.tscn"),false]
+var post_8 = [preload("res://prefabs/gun_post.tscn"),false]
+var post_9 = [preload("res://prefabs/knifetwo_post.tscn"),false]
+var post_10 = [preload("res://prefabs/knife_post.tscn"),false]
+var post_11 = [preload("res://prefabs/mayortwo_post.tscn"),false]
+var post_12 = [preload("res://prefabs/mayor_post.tscn"),false]
+var post_13 = [preload("res://prefabs/microwavetwo_post.tscn"),false]
+var post_14 = [preload("res://prefabs/microwave_post.tscn"),false]
+var post_15 = [preload("res://prefabs/nofish_post.tscn"),false]
+var post_16 = [preload("res://prefabs/nuclear_post.tscn"),false]
+var post_17 = [preload("res://prefabs/void_post.tscn"),false]
+var post_18 = [preload("res://prefabs/planetwo_post.tscn"),false]
+var post_19 = [preload("res://prefabs/plane_post.tscn"),false]
+var post_20 = [preload("res://prefabs/stare_post.tscn"),false]
+var post_21 = [preload("res://prefabs/tanktwo_post.tscn"),false]
+var post_22 = [preload("res://prefabs/tank_post.tscn"),false]
+var post_23 = [preload("res://prefabs/thief_post.tscn"),false]
 var user = 1
-var catPostsNum = 2
-var catPosts = [post_0,post_1]
+var catPostsNum = 24
+var catPosts = [post_0,post_1,post_2,post_3,post_4,post_5,post_6,post_7,post_8,post_9,post_10,post_11,post_12,post_13,post_14,post_15,post_16,post_17,post_18,post_19,post_20,post_21,post_22,post_23]
 var times_generated = 0
 
 func _init():

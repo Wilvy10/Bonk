@@ -19,7 +19,7 @@ script = ExtResource("3_4bu7p")
 offset_left = -103.00001
 offset_top = 56.0
 offset_right = 100.99999
-offset_bottom = 136.99998
+offset_bottom = 159.84167
 scale = Vector2(1.0145473, 1.1074551)
 color = Color(0.05882353, 0.13333334, 0.16470589, 1)
 
