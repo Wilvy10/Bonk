@@ -1,5 +1,5 @@
 extends Control
-@onready var delay_timer: Timer = $DelayTimer
+#@onready var delay_timer: Timer = $DelayTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

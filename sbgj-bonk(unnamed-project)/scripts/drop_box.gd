@@ -1,7 +1,7 @@
 extends Polygon2D
 var dropposition = Vector2(-12.0,-14.0)
 #var location1 = [Vector2(420,150),false]
-var location2 = [Vector2(450,350),false]
+var location2 = [Vector2(463,350),false]
 #var locations = [location1,location2]
 #locations[0][1] would be location1 false
 # Called when the node enters the scene tree for the first time.

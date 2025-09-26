@@ -5,10 +5,10 @@
 [ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scripts/user.gd" id="1_ygxny"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
 [ext_resource type="Texture2D" uid="uid://bda80tuytu1iq" path="res://images/Background and UI/desktop_background_2.png" id="2_5cypo"]
-[ext_resource type="Texture2D" uid="uid://c4nbc84tdhl3i" path="res://images/Background and UI/desktop_background.png" id="2_nqdth"]
 [ext_resource type="Script" uid="uid://bt05dq5eiet1v" path="res://scripts/happiness_meter.gd" id="2_wi4c7"]
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="3_ipu61"]
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scripts/drop_box.gd" id="4_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://c1d6nbupbwust" path="res://images/Background and UI/desktop_background_hole.png" id="4_o6v7o"]
 [ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/generator.gd" id="5_ipu61"]
 [ext_resource type="AudioStream" uid="uid://dea6wmbrrbqf1" path="res://sounds/notification.mp3" id="11_5cypo"]
 
@@ -18,13 +18,13 @@
 script = ExtResource("1_wi4c7")
 
 [node name="DesktopBackground2" type="Sprite2D" parent="."]
-position = Vector2(577, 326)
+z_index = -2
+position = Vector2(576, 324)
 texture = ExtResource("2_5cypo")
 
-[node name="DesktopBackground" type="Sprite2D" parent="."]
-visible = false
+[node name="DesktopBackgroundHole" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
-texture = ExtResource("2_nqdth")
+texture = ExtResource("4_o6v7o")
 
 [node name="user" type="Node" parent="."]
 script = ExtResource("1_ygxny")
@@ -132,12 +132,15 @@ clip_text = true
 metadata/_edit_use_anchors_ = true
 
 [node name="drop box" type="Polygon2D" parent="."]
-position = Vector2(75, 30)
+position = Vector2(192, 113)
+scale = Vector2(0.7200015, 0.7411432)
+color = Color(1, 1, 1, 0)
 polygon = PackedVector2Array(273, 57, 533, 57, 537, 533, 271, 531)
 script = ExtResource("4_0rdsr")
 
 [node name="Area2D" type="Area2D" parent="drop box"]
-position = Vector2(12, 14)
+position = Vector2(-149.9997, -106.59208)
+scale = Vector2(1.3888901, 1.3963526)
 collision_mask = 2
 priority = 1
 
@@ -152,6 +155,7 @@ scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_70vka")
 
 [node name="postGenerator" type="Node2D" parent="."]
+z_index = 1
 script = ExtResource("5_ipu61")
 
 [node name="refresh_button" type="Button" parent="."]

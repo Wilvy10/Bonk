@@ -2,7 +2,7 @@ extends Node2D
 #instance object post with value of random (0 to final post)
 #have list of posts to pull from
 
-var locations = [Vector2(1000,200),Vector2(1000,500)]
+var locations = [Vector2(1000,200),Vector2(1000,450)]
 var post_0 = [preload("res://prefabs/peeking_cat_post.tscn"),false]
 var post_1 = [preload("res://prefabs/stare_post.tscn"),false]
 var user = 1
@@ -24,7 +24,7 @@ func SelectPost():
 		if postNum < 0:
 			postNum = 0
 		postNum = retrieveAvailablePost(catPosts,postNum)
-		print(postNum)
+		#print(postNum)
 		if postNum != null:
 			var postInstance = catPosts[postNum][0].instantiate()
 			add_child(postInstance)
@@ -43,3 +43,7 @@ func retrieveAvailablePost(list:Array,item:int):
 		elif(i == item):
 			return item
 	return null
+
+func resetAvailablePosts(list:Array):
+	for i in list.size():
+		list[i][1] = false
