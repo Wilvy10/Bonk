@@ -23,7 +23,7 @@ func _process(delta):
 	if onFeed:
 		if global_position.y < dropBoxLocation.y + 50:
 			
-			var movement = (dropBoxLocation.y + 50 - global_position.y ) * 10 * delta
+			var movement = (dropBoxLocation.y + 50 - global_position.y ) * 2 * delta
 			if movement > 50:
 				movement = 50
 			if movement < 0.5:
@@ -49,7 +49,7 @@ func setStartPosition(location:Vector2 ):
 	
 
 func _enter_tree() -> void:
-	var refreshButton = get_node("/root/Node2D/refresh_button")
+	var refreshButton = get_node("/root/Node2D/RefreshButton/refresh_button")
 	refreshButton.button_up.connect(onRefresh)
 	dropBox = get_node("/root/Node2D/drop box")
 	sfx_notif = get_node("/root/Node2D/sfx_notif")
@@ -91,7 +91,8 @@ func onRefresh():
 			onFeed = true
 			transform.origin -= transform.y * 500
 			set_z_index(-2)
-		
+	elif(dropBox.checkFull()):
+		queue_free()
 		
 	
 
@@ -119,7 +120,8 @@ func set_happiness(_happiness):
 func _on_timer_timeout() -> void:
 	#after timer 
 	print("timer finished")
-	
+	dropBox.releasePostLocation(dropBoxLocation)
+	get_node("..").resetAvailablePosts()
 	get_node("..").SelectPost()
 	queue_free()
 	

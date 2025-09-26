@@ -44,6 +44,6 @@ func retrieveAvailablePost(list:Array,item:int):
 			return item
 	return null
 
-func resetAvailablePosts(list:Array):
-	for i in list.size():
-		list[i][1] = false
+func resetAvailablePosts():
+	for i in catPosts.size():
+		catPosts[i][1] = false

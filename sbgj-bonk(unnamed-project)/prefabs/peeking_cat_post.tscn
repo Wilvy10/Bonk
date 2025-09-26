@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="2_kh0xi"]
 
 [node name="post" type="Polygon2D"]
-z_index = 2
 scale = Vector2(0.8594007, 1)
 polygon = PackedVector2Array(-100, -82, 131, -82, 129.37, 135.45, -100.21, 137.87)
 script = ExtResource("1_2cv18")

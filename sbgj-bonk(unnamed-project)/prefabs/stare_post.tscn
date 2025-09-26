@@ -63,7 +63,7 @@ scale = Vector2(2.1872756, 15.074606)
 shape = SubResource("RectangleShape2D_tc63t")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
 [connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
