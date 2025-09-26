@@ -14,5 +14,7 @@ func _ready() -> void:
 func AddRage(_rage):
 	rage += _rage
 	set_text("Rage: " + str(rage))
+	get_parent().check()
+	
 func get_rage():
 	return rage

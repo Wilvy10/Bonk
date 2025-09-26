@@ -13,6 +13,18 @@ func _process(delta: float) -> void:
 	
 	#get_node("../post").get_happiness()
 	
+func check():
+	happiness = get_node("happiness meter").get_happiness()
+	rage = get_node("rage meter").get_rage() 
+	if (happiness - rage >=5):
+		var texture = load('res://images/Person Icons/Person CL Happy.png')
+		get_node("PersonClNeutral").texture = texture
+	elif (rage -happiness >= 5):
+		var texture = load('res://images/Person Icons/Person CL Neutral.png')
+		get_node("PersonClNeutral").texture = texture
+	else:
+		var texture = load('res://images/Person Icons/Person CL Angry.png')
+		get_node("PersonClNeutral").texture = texture
 func endGame():
 	happiness = get_node("happiness meter").get_happiness()
 	rage = get_node("rage meter").get_rage() 
