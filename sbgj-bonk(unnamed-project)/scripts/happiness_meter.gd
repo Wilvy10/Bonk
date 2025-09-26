@@ -14,3 +14,13 @@ func _ready() -> void:
 func AddHappiness(_happiness):
 	happiness += _happiness
 	set_text(str(happiness))
+	
+#happy ending condition 
+func happyendingcon():
+	if happiness == 10:
+		get_tree().change_scene_to_file("res://scenes/happyending.tscn")
+
+#rage ending condition
+func rageendingcon():
+	pass
+		#get_tree().change_scene_to_file("res://scenes/rageending.tscn")

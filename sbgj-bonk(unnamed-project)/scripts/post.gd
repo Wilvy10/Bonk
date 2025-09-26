@@ -9,39 +9,50 @@ var selected = false
 var onFeed = false
 var dropBox = Node
 var dropBoxLocation = Vector2(0,0)
+var sfx_notif = Node2D
+var timing = false
 
 func _init():
 	#spawn at appropriate place
+	#print(sfx_notif)
 	startPosition = position
 	print(startPosition)
 	
 
 func _process(delta):
 	if onFeed:
-		if global_position.y < dropBoxLocation.y:
+		if global_position.y < dropBoxLocation.y + 50:
 			
-			var movement = transform.y * (dropBoxLocation.y - global_position.y) / 5 * delta
-			if movement.length() < 10:
-				movement = movement.limit_length() * 10
-			transform.origin += movement
-			if global_position.y > dropBoxLocation.y:
-				global_position.y = dropBoxLocation.y
-		#after timer 
-		#queue_free
-		#get_node("..").SelectPost
+			var movement = (dropBoxLocation.y + 50 - global_position.y ) * 2 * delta
+			if movement > 50:
+				movement = 50
+			if movement < 0.5:
+				movement = 0.5
+			global_position.y += movement
+			if global_position.y > dropBoxLocation.y + 50:
+				global_position.y = dropBoxLocation.y + 50
+		elif (!timing):
+			
+			get_node("Timer").start()
+			timing = true
+			print("timer set")
+		
 	if dragging:
 		position = get_global_mouse_position() - _offset
-	
-	
+
+
+
+
 func setStartPosition(location:Vector2 ):
 	startPosition = location
 	print(startPosition)
 	
 
 func _enter_tree() -> void:
-	var refreshButton = get_node("/root/Node2D/refresh_button")
+	var refreshButton = get_node("/root/Node2D/RefreshButton/refresh_button")
 	refreshButton.button_up.connect(onRefresh)
 	dropBox = get_node("/root/Node2D/drop box")
+	sfx_notif = get_node("/root/Node2D/sfx_notif")
 
 func _on_button_button_down() -> void:
 	if !onFeed:
@@ -70,11 +81,18 @@ func onRefresh():
 		if (dropBox.checkFull()):
 			#feed is ready to be sent
 			#dropBox.releasePostLocation(dropBoxLocation)
+			print(sfx_notif)
+			if sfx_notif:
+				sfx_notif.play()
+			else:
+				print("Sound effect not assigned")
 			get_node("/root/Node2D/user/happiness meter").AddHappiness(happiness)
 			selected = false
 			onFeed = true
-			transform.origin -= transform.y * 300
-		
+			transform.origin -= transform.y * 500
+			set_z_index(-2)
+	elif(dropBox.checkFull()):
+		queue_free()
 		
 	
 
@@ -97,3 +115,13 @@ func get_happiness():
 
 func set_happiness(_happiness):
 	happiness = _happiness
+
+
+func _on_timer_timeout() -> void:
+	#after timer 
+	print("timer finished")
+	dropBox.releasePostLocation(dropBoxLocation)
+	get_node("..").resetAvailablePosts()
+	get_node("..").SelectPost()
+	queue_free()
+	
