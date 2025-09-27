@@ -8,4 +8,4 @@ static func add_mood(happy_num):
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
-			get_tree().quit()
+			get_tree().change_scene_to_file("res://scenes/Menu.tscn")

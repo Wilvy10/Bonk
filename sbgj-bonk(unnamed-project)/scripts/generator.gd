@@ -3,6 +3,7 @@ extends Node2D
 #have list of posts to pull from
 
 var locations = [Vector2(750,300),Vector2(1000,300)]
+# Post Images
 var post_0 = [preload("res://prefabs/anti_cat_post.tscn"),false]
 var post_1 = [preload("res://prefabs/barrentwo_post.tscn"),false]
 var post_2 = [preload("res://prefabs/barren_post.tscn"),false]
@@ -41,6 +42,7 @@ func SelectPost():
 	if (times_generated == 10):
 		ending()
 	else:
+		#Reseting variables for loop
 		times_generated += 1
 		var postsToGenerate = 2
 		var postsLeftToGenerate = 2
@@ -51,7 +53,7 @@ func SelectPost():
 				postNum = randi() % catPostsNum - postsToGenerate + postsLeftToGenerate
 			if postNum < 0:
 				postNum = 0
-			postNum = retrieveAvailablePost(catPosts,postNum)
+			postNum = retrieveAvailablePost(catPosts,postNum) #Gets Post to be displayed
 			#print(postNum)
 			if postNum != null:
 				var postInstance = catPosts[postNum][0].instantiate()
@@ -59,7 +61,7 @@ func SelectPost():
 				postInstance.setStartPosition(locations[postsToGenerate - postsLeftToGenerate])
 				postInstance.set_global_position(locations[postsToGenerate - postsLeftToGenerate])
 				postsLeftToGenerate -= 1
-				catPosts[postNum][1] = true
+				catPosts[postNum][1] = true #Makes sure the same post doesn't appear twice
 
 
 #list functions

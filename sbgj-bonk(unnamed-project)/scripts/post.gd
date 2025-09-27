@@ -17,7 +17,7 @@ func _init():
 	#spawn at appropriate place
 	#print(sfx_notif)
 	startPosition = position
-	print(startPosition)
+	#print(startPosition)
 	
 
 func _process(delta):
@@ -36,7 +36,7 @@ func _process(delta):
 			
 			get_node("Timer").start()
 			timing = true
-			print("timer set")
+			#print("timer set")
 		
 	if dragging:
 		position = get_global_mouse_position() - _offset
@@ -46,7 +46,7 @@ func _process(delta):
 
 func setStartPosition(location:Vector2 ):
 	startPosition = location
-	print(startPosition)
+	#print(startPosition)
 	
 
 func _enter_tree() -> void:
@@ -70,7 +70,7 @@ func _on_button_button_up() -> void:
 		dragging = false
 		if (collision == false):
 			position = startPosition
-			print(startPosition)
+			#print(startPosition)
 		else:
 			position = startPosition
 			dropBoxLocation = dropBox.setPostLocation()
@@ -78,12 +78,13 @@ func _on_button_button_up() -> void:
 				selected = true
 				global_position = dropBoxLocation
 
+# Upon clicking the refresh button this happens:
 func onRefresh():
-	if (selected):
+	if (selected): #If there's a post in the box
 		if (dropBox.checkFull()):
 			#feed is ready to be sent
 			#dropBox.releasePostLocation(dropBoxLocation)
-			print(sfx_notif)
+			#print(sfx_notif)
 			if sfx_notif:
 				sfx_notif.play()
 			else:
@@ -98,20 +99,14 @@ func onRefresh():
 		queue_free()
 		
 	
-
+#Detecting if post is in or out of the drop box collision
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	collision = true
+	#print("in box")
 	
-	print("in box")
-	
-
-
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	collision = false
-	
-	
-	print("out of box")
+	#print("out of box")
 	
 func get_happiness():
 	return happiness
@@ -126,7 +121,8 @@ func set_rage(_rage):
 
 func _on_timer_timeout() -> void:
 	#after timer 
-	print("timer finished")
+	#print("timer finished")
+	timing = false
 	dropBox.releasePostLocation(dropBoxLocation)
 	get_node("..").resetAvailablePosts()
 	get_node("..").SelectPost()

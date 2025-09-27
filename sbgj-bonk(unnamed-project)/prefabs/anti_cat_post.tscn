@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_hlr7b"]
 [ext_resource type="Texture2D" uid="uid://boahbjvnutw3p" path="res://images/Post Icons/Posts IHATECATS.png" id="2_hlr7b"]
-[ext_resource type="Script" path="res://prefabs/post_anti_cat.gd" id="3_hlr7b"]
+[ext_resource type="Script" uid="uid://qoj10mcsyyii" path="res://prefabs/prefabs scripts/post_anti_cat.gd" id="3_hlr7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)

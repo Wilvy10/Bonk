@@ -1,6 +1,7 @@
 extends ColorRect
 var paused = true
 
+#Settings Button
 func _on_button_button_down() -> void:
 	paused = true
 	get_node("../settings/ColorRect").set_mouse_filter(0)

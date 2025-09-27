@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_wwo0i"]
 [ext_resource type="Texture2D" uid="uid://baern55t63xue" path="res://images/Post Icons/Post Knife.png" id="2_wwo0i"]
-[ext_resource type="Script" path="res://prefabs/post_knife.gd" id="3_wwo0i"]
+[ext_resource type="Script" uid="uid://b3hmtill35ohk" path="res://prefabs/prefabs scripts/post_knife.gd" id="3_wwo0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)

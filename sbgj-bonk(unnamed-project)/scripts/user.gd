@@ -25,6 +25,7 @@ func check():
 	else:
 		var texture = load('res://images/Person Icons/Person CL Neutral.png')
 		get_node("PersonClNeutral").texture = texture
+		
 func endGame():
 	happiness = get_node("happiness meter").get_happiness()
 	rage = get_node("rage meter").get_rage() 

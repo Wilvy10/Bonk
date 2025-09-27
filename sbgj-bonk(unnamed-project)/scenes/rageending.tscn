@@ -1,23 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgpbpjjq5d5j1"]
+[gd_scene load_steps=6 format=3 uid="uid://dgpbpjjq5d5j1"]
 
+[ext_resource type="VideoStream" uid="uid://cm3doo1776dbt" path="res://images/Animations/Scrolling Anger.ogv" id="1_odmks"]
+[ext_resource type="Script" uid="uid://br48ph0p2cq8h" path="res://scripts/rageending.gd" id="1_oxfvw"]
 [ext_resource type="Texture2D" uid="uid://2bfth508tpi2" path="res://images/Background and UI/RageEndingStill.png" id="1_rlqo1"]
+[ext_resource type="VideoStream" uid="uid://dap3830fkw8yv" path="res://images/Animations/Angry Ending - Cat Lover.ogv" id="1_u870l"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cikoh"]
 font_size = 53
 
-[node name="happyending" type="Control"]
+[node name="rageending" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oxfvw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 323)
+scale = Vector2(0.6, 0.6)
+
+[node name="Angry Person" type="VideoStreamPlayer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_u870l")
+
+[node name="Scrolling Rage" type="VideoStreamPlayer" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_odmks")
+autoplay = true
 
 [node name="RageEndingStill" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
+visible = false
+position = Vector2(577, 323)
 texture = ExtResource("1_rlqo1")
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.395

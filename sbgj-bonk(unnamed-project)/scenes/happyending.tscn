@@ -1,6 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgjap0wjclel"]
+[gd_scene load_steps=6 format=3 uid="uid://bgjap0wjclel"]
 
+[ext_resource type="VideoStream" uid="uid://cxrb6gddnmh62" path="res://images/Animations/Happy Ending - Cat Lover.ogv" id="1_bdpws"]
 [ext_resource type="Texture2D" uid="uid://cbogpxgukouoq" path="res://images/Background and UI/HappyEndingStill.png" id="1_mojxr"]
+[ext_resource type="Script" uid="uid://ph4ovqpc6gto" path="res://scripts/happyending.gd" id="1_un34r"]
+[ext_resource type="VideoStream" uid="uid://c7kvtxodryuyc" path="res://images/Animations/Scrolling Happy.ogv" id="2_3x7lu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cikoh"]
 font_size = 53
@@ -12,8 +15,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_un34r")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 325)
+
+[node name="User Happy" type="VideoStreamPlayer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_bdpws")
+
+[node name="Scrolling Happy" type="VideoStreamPlayer" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("2_3x7lu")
+autoplay = true
 
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.395
@@ -33,7 +58,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Background" type="Sprite2D" parent="."]
+visible = false
 z_index = -1
-position = Vector2(575.9999, 330.00003)
+position = Vector2(575, 325.00003)
 scale = Vector2(1.0251737, 1.0493827)
 texture = ExtResource("1_mojxr")

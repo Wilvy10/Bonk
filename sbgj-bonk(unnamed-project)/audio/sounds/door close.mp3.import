@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci2c8b1f7cr5v"
+path="res://.godot/imported/door close.mp3-54d385616503ee384f813a4afc9f4aa3.mp3str"
+
+[deps]
+
+source_file="res://audio/sounds/door close.mp3"
+dest_files=["res://.godot/imported/door close.mp3-54d385616503ee384f813a4afc9f4aa3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
