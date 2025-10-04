@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=21 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
@@ -10,15 +10,14 @@
 [ext_resource type="Script" uid="uid://dpjsttnwfnlcc" path="res://scripts/drop_box.gd" id="4_0rdsr"]
 [ext_resource type="Texture2D" uid="uid://c1d6nbupbwust" path="res://images/Background and UI/desktop_background_hole.png" id="4_o6v7o"]
 [ext_resource type="Script" uid="uid://b3nj8wxf7wwnl" path="res://scripts/generator.gd" id="5_ipu61"]
-[ext_resource type="Script" uid="uid://b4unf516q2ynw" path="res://scripts/rage_meter.gd" id="5_vnsdt"]
 [ext_resource type="Texture2D" uid="uid://b63dye5654nqb" path="res://images/Person Icons/Person CL Neutral.png" id="7_ihbck"]
 [ext_resource type="Texture2D" uid="uid://dphkha8pi2bnj" path="res://images/Person Icons/Person CL Happy.png" id="7_ikqpi"]
 [ext_resource type="Texture2D" uid="uid://y2x7tki822jk" path="res://images/Person Icons/Person CL Angry.png" id="8_5luka"]
 [ext_resource type="AudioStream" uid="uid://dea6wmbrrbqf1" path="res://audio/sounds/notification.mp3" id="11_5cypo"]
 [ext_resource type="Texture2D" uid="uid://yuta8eiv1p3a" path="res://images/Background and UI/refresh button.png" id="11_o6v7o"]
-[ext_resource type="Script" uid="uid://die6xb5l0xim8" path="res://scripts/settings.gd" id="13_sp04v"]
 [ext_resource type="Texture2D" uid="uid://cb10eym3seyj4" path="res://images/Background and UI/settings icon light.png" id="14_8xp80"]
 [ext_resource type="Texture2D" uid="uid://cv4aoq1mb2duq" path="res://images/Background and UI/pause.png" id="14_ihbck"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="18_ikqpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70vka"]
 
@@ -61,7 +60,6 @@ offset_bottom = 487.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Rage: 0"
 horizontal_alignment = 1
-script = ExtResource("5_vnsdt")
 metadata/_edit_use_anchors_ = true
 
 [node name="happiness meter" type="Label" parent="user"]
@@ -199,15 +197,6 @@ position = Vector2(419, 152.00002)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_70vka")
 
-[node name="ColorRect" type="ColorRect" parent="drop box"]
-visible = false
-modulate = Color(0.3328807, 0.33288068, 0.33288068, 1)
-offset_left = 229.16618
-offset_top = 114.6877
-offset_right = 269.1662
-offset_bottom = 154.68768
-scale = Vector2(7.459547, 10.15183)
-
 [node name="postGenerator" type="Node2D" parent="."]
 z_index = 1
 script = ExtResource("5_ipu61")
@@ -233,7 +222,7 @@ offset_top = 18.0
 offset_right = 1134.0
 offset_bottom = 58.0
 color = Color(0, 0, 0, 1)
-script = ExtResource("13_sp04v")
+script = ExtResource("18_ikqpi")
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect2"]
 layout_mode = 0

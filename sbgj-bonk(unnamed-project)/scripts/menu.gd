@@ -10,20 +10,20 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
+#when the start button is pressed, wait for sound effect and go to main game (scene)
 func _on_start_pressed() -> void:
 	$sfx_play.play()
 	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://scenes/main_game.tscn")
 
-
+#when the setting button is pressed, wait for sound effect and go to settings (scene)
 func _on_settings_pressed() -> void:
 	$sfx_play.play()
 	await get_tree().create_timer(0.3).timeout
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
 
-
-func _on_exit_pressed() -> void:
+#when the quit button is pressed exit the game
+func _on_quit_pressed() -> void:
 	$sfx_close.play()
 	await get_tree().create_timer(0.4).timeout
 	get_tree().quit()

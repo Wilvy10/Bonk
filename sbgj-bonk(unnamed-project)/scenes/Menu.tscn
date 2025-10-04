@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://yq3amqpq6k4p"]
+[gd_scene load_steps=8 format=3 uid="uid://yq3amqpq6k4p"]
 
 [ext_resource type="Script" uid="uid://byiade1vg0pc3" path="res://scripts/menu.gd" id="1_xdvgc"]
 [ext_resource type="Texture2D" uid="uid://c8h2r8wf4xqw2" path="res://images/Background and UI/quit_button.png" id="2_11y2r"]
@@ -8,9 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://ci2c8b1f7cr5v" path="res://audio/sounds/door close.mp3" id="6_b6cxs"]
 [ext_resource type="AudioStream" uid="uid://kfe7nyg4rvv5" path="res://audio/sounds/door open 2.mp3" id="7_aaywf"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yleq"]
-bg_color = Color(1, 1, 1, 1)
-
 [node name="Menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -19,15 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xdvgc")
-
-[node name="place holder background" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_5yleq")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -51,7 +39,7 @@ texture = ExtResource("3_o0tnf")
 position = Vector2(167.25, 232)
 texture = ExtResource("2_11y2r")
 
-[node name="exit button" type="Button" parent="VBoxContainer/QuitButton"]
+[node name="quit button" type="Button" parent="VBoxContainer/QuitButton"]
 modulate = Color(1, 1, 1, 0)
 offset_left = -175.0
 offset_top = -40.0
@@ -97,6 +85,6 @@ stream = ExtResource("6_b6cxs")
 [node name="sfx_play" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_aaywf")
 
-[connection signal="pressed" from="VBoxContainer/QuitButton/exit button" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton/quit button" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="VBoxContainer/SettingsButton/settings button" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/StartButton/start button" to="." method="_on_start_pressed"]
