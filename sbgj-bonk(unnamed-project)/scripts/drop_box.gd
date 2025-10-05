@@ -1,43 +1,31 @@
 extends Polygon2D
 var dropposition = Vector2(-12.0,-14.0)
-#var location1 = [Vector2(420,150),false]
-var location2 = [Vector2(463,350),false]
-#var locations = [location1,location2]
-#locations[0][1] would be location1 false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	print(dropposition)
-
+var location = [Vector2(463,350),false]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 	
 	
+#tells the drop box there is a post in the location if there is not a post already there
 func setPostLocation():
-	#if (!locations[0][1]):
-		#locations[0][1] = true
-		#return locations[0][0]
-	#elif (!locations[1][1]):
-		#locations[1][1] = true
-		#return locations[1][0]
-	if !location2[1]:
-		location2[1] = true
-		return location2[0]
+	if !location[1]:
+		location[1] = true
+		return location[0]
 	else:
 		return null
 
-func releasePostLocation(location:Vector2):
-	if location == location2[0]:
-		location2 [1] = false
-	#if (location == locations[0][0]):
-		#locations[0][1] = false
-	#elif (location == locations[1][0]):
-		#locations[1][1] = false;
+#tells drop box
+func releasePostLocation(_location:Vector2):
+	if _location == location[0]:
+		location [1] = false
 
+
+#if post is in location return true 
+#else false
 func checkFull():
-	#if (locations[0][1] && locations[1][1]):
-	if location2[1]:
+	
+	if location[1]:
 		return true
 	else:
 		return false

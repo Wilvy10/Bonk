@@ -7,14 +7,12 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#set_text(str(get_node("/root/Node2D/post").get_happiness()))
-	
 func AddRage(_rage):
 	rage += _rage
 	set_text("Rage: " + str(rage))
+	#check if face needs to be updated
 	get_parent().check()
-	
+
+
 func get_rage():
 	return rage
