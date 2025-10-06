@@ -54,7 +54,6 @@ func _enter_tree() -> void:
 	refreshButton.button_up.connect(onRefresh)
 	dropBox = get_node("/root/Node2D/drop box")
 	sfx_notif = get_node("/root/Node2D/sfx_notif")
-	#set_rage(get_child(0).rage)
 
 func _on_button_button_down() -> void:
 	if !onFeed:
@@ -73,31 +72,33 @@ func _on_button_button_up() -> void:
 			#print(startPosition)
 		else:
 			position = startPosition
-			dropBoxLocation = dropBox.setPostLocation()
+			dropBoxLocation = dropBox.setPostLocation(1)
 			if dropBoxLocation != null:
 				selected = true
 				global_position = dropBoxLocation
 
 # Upon clicking the refresh button this happens:
 func onRefresh():
-	if (selected): #If there's a post in the box
-		if (dropBox.checkFull()):
-			#feed is ready to be sent
-			#dropBox.releasePostLocation(dropBoxLocation)
-			#print(sfx_notif)
-			if sfx_notif:
-				sfx_notif.play()
-			else:
-				print("Sound effect not assigned")
-			get_node("/root/Node2D/user/happiness meter").AddHappiness(happiness)
-			get_node("/root/Node2D/user/rage meter").AddRage(rage)
-			selected = false
-			onFeed = true
-			transform.origin -= transform.y * 500
-			set_z_index(-2)
-	elif(dropBox.checkFull()):
-		queue_free()
+	if (!timing):
+		if (selected): #If there's a post in the box
+			if (dropBox.checkFull()):
+				#feed is ready to be sent
+				#dropBox.releasePostLocation(dropBoxLocation)
+				#print(sfx_notif)
+				if sfx_notif:
+					sfx_notif.play()
+				else:
+					print("Sound effect not assigned")
+				get_node("/root/Node2D/user").AddHappiness(happiness)
+				get_node("/root/Node2D/user").AddRage(rage)
+				#timing = true
+				onFeed = true
+				transform.origin -= transform.y * 500
+				set_z_index(-2)
 		
+		elif(dropBox.checkFull()):
+			queue_free()
+			
 	
 #Detecting if post is in or out of the drop box collision
 func _on_area_2d_area_entered(area: Area2D) -> void:
@@ -123,6 +124,7 @@ func _on_timer_timeout() -> void:
 	#after timer 
 	#print("timer finished")
 	timing = false
+	selected = false
 	dropBox.releasePostLocation(dropBoxLocation)
 	get_node("..").resetAvailablePosts()
 	get_node("..").SelectPost()

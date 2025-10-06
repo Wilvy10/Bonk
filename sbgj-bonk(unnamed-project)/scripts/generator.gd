@@ -3,6 +3,9 @@ extends Node2D
 #have list of posts to pull from
 
 var locations = [Vector2(750,300),Vector2(1000,300)]
+
+#texture image,  string flavourText,  string emotion,  int value,  string emotion2, int value
+#overload for last 2 variables
 # Post Images
 var post_0 = [preload("res://prefabs/anti_cat_post.tscn"),false]
 var post_1 = [preload("res://prefabs/barrentwo_post.tscn"),false]
@@ -56,12 +59,17 @@ func SelectPost():
 			postNum = retrieveAvailablePost(catPosts,postNum) #Gets Post to be displayed
 			#print(postNum)
 			if postNum != null:
-				var postInstance = catPosts[postNum][0].instantiate()
-				add_child(postInstance)
-				postInstance.setStartPosition(locations[postsToGenerate - postsLeftToGenerate])
-				postInstance.set_global_position(locations[postsToGenerate - postsLeftToGenerate])
+				print(get_tree())
+				get_node("/root/Node2D/user")
+				get_node("post1").show()
+				get_node("post1").setStartPosition(locations[postsToGenerate - postsLeftToGenerate])
+				get_node("post1").set_global_position(locations[postsToGenerate - postsLeftToGenerate])
+				#var postInstance = catPosts[postNum][0].instantiate()
+				#add_child(postInstance)
+				#postInstance.setStartPosition(locations[postsToGenerate - postsLeftToGenerate])
+				#postInstance.set_global_position(locations[postsToGenerate - postsLeftToGenerate])
 				postsLeftToGenerate -= 1
-				catPosts[postNum][1] = true #Makes sure the same post doesn't appear twice
+				#catPosts[postNum][1] = true #Makes sure the same post doesn't appear twice
 
 
 #list functions

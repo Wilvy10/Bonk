@@ -15,8 +15,6 @@ func _process(delta: float) -> void:
 #face emotion check 
 # ADVICE if adding more emotions choose highest one and neutral if highest one is 3 or more higher than second one
 func check():
-	happiness = get_node("happiness meter").get_happiness()
-	rage = get_node("rage meter").get_rage() 
 	#if happiness is 5 or more than rage set happy face
 	if (happiness - rage >=5):
 		var texture = load('res://images/Person Icons/Person CL Happy.png')
@@ -33,11 +31,30 @@ func check():
 
 #called when game ends
 func endGame():
-	happiness = get_node("happiness meter").get_happiness()
-	rage = get_node("rage meter").get_rage() 
 	#if happiness is more than rage change scene to happy ending
 	if (happiness > rage):
 		get_tree().change_scene_to_file("res://scenes/happyending.tscn")
 	#else (including happiness = rage) change scene to rage ending
 	else:
 		get_tree().change_scene_to_file("res://scenes/rageending.tscn")
+
+func AddRage(_rage):
+	rage += _rage
+	get_node("rage meter").set_text("Rage: " + str(rage))
+	#check if face needs to be updated
+	check()
+
+
+func get_rage():
+	return rage
+
+
+func AddHappiness(_happiness):
+	happiness += _happiness
+	get_node("happiness meter").set_text("Happiness: " + str(happiness))
+	#check if face needs to be updated
+	check()
+
+
+func get_happiness():
+	return happiness

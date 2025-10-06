@@ -1,8 +1,6 @@
 class_name mood
 extends Node2D
 
-
-
 #function to escape to the menu when escape is pressed when playing the main game
 func _unhandled_input(event):
 	if event is InputEventKey:
