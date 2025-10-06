@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bh7pvjteorjrm"]
+[gd_scene load_steps=3 format=3 uid="uid://bml65cp5kfsjw"]
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_2cv18"]
-[ext_resource type="Texture2D" uid="uid://bov0ajova0mav" path="res://images/Post Icons/peeking_cat.png" id="2_kh0xi"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4htm4"]
+load_path = "res://.godot/imported/peeking_cat.png-4d1da52d32129448cf73084c17950d75.ctex"
 
 [node name="post" type="Polygon2D"]
 scale = Vector2(0.8594007, 1)
@@ -11,7 +13,7 @@ script = ExtResource("1_2cv18")
 [node name="PeekingCat" type="Sprite2D" parent="."]
 position = Vector2(16.942505, -14.674061)
 scale = Vector2(0.13198397, 0.10289207)
-texture = ExtResource("2_kh0xi")
+texture = SubResource("CompressedTexture2D_4htm4")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -97.74247

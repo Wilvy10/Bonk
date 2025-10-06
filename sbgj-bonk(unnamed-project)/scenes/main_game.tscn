@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=18 format=3 uid="uid://ch3su8g5bqec0"]
 
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
 [ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scripts/user.gd" id="1_ygxny"]
@@ -13,9 +13,11 @@
 [ext_resource type="Texture2D" uid="uid://yuta8eiv1p3a" path="res://images/Background and UI/refresh button.png" id="11_o6v7o"]
 [ext_resource type="Texture2D" uid="uid://cb10eym3seyj4" path="res://images/Background and UI/settings icon light.png" id="14_8xp80"]
 [ext_resource type="Texture2D" uid="uid://cv4aoq1mb2duq" path="res://images/Background and UI/pause.png" id="14_ihbck"]
-[ext_resource type="Script" path="res://scripts/instructions.gd" id="18_ikqpi"]
+[ext_resource type="Script" uid="uid://die6xb5l0xim8" path="res://scripts/instructions.gd" id="18_ikqpi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70vka"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xp80"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ihbck"]
 font_size = 28
@@ -24,7 +26,7 @@ font_size = 28
 script = ExtResource("1_wi4c7")
 
 [node name="DesktopBackground2" type="Sprite2D" parent="."]
-z_index = -2
+z_index = -1
 position = Vector2(576, 324)
 texture = ExtResource("2_5cypo")
 
@@ -68,12 +70,6 @@ text = "Happiness: 0"
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="PersonCl" type="Sprite2D" parent="user"]
-z_index = 1
-position = Vector2(175.00002, 194)
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("7_ihbck")
-
 [node name="ColorRect" type="ColorRect" parent="user"]
 offset_left = 46.0
 offset_top = 82.0
@@ -81,38 +77,38 @@ offset_right = 304.0
 offset_bottom = 305.0
 color = Color(0, 0, 0, 1)
 
-[node name="drop box" type="Polygon2D" parent="."]
-position = Vector2(192, 113)
-scale = Vector2(0.7200015, 0.7411432)
-color = Color(1, 1, 1, 0)
-polygon = PackedVector2Array(273, 57, 533, 57, 537, 533, 271, 531)
+[node name="PersonCl" type="Sprite2D" parent="user"]
+position = Vector2(175.00002, 194)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("7_ihbck")
+
+[node name="drop box" type="Node2D" parent="."]
+position = Vector2(463, 323)
+scale = Vector2(1.37, 2.37)
 script = ExtResource("4_0rdsr")
 
 [node name="Area2D" type="Area2D" parent="drop box"]
-position = Vector2(-149.9997, -106.59208)
-scale = Vector2(1.3888901, 1.3963526)
+scale = Vector2(1, 1.005)
 collision_mask = 2
 priority = 1
 
-[node name="collisionBox" type="CollisionPolygon2D" parent="drop box/Area2D" groups=["drop box"]]
-position = Vector2(-217, -15)
-scale = Vector2(1.6721517, 1.0065033)
-polygon = PackedVector2Array(275, 59, 276, 528, 444.33765, 533.5302, 440.15143, 59.612312)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drop box/Area2D"]
-position = Vector2(419, 152.00002)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_70vka")
+
+[node name="Timer" type="Timer" parent="drop box"]
+wait_time = 1.2999999999999998
+one_shot = true
 
 [node name="postGenerator" type="Node2D" parent="."]
 z_index = 1
 script = ExtResource("5_ipu61")
 
 [node name="post1" type="Node2D" parent="postGenerator"]
-position = Vector2(636, 365)
+position = Vector2(750, 300)
 script = ExtResource("2_0rdsr")
 
-[node name="post1_image" type="Sprite2D" parent="postGenerator/post1"]
+[node name="post_image" type="Sprite2D" parent="postGenerator/post1"]
 position = Vector2(0.5, -89.5)
 texture = ExtResource("10_sp04v")
 
@@ -146,8 +142,7 @@ offset_top = 127.0
 offset_right = 201.0
 offset_bottom = 177.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "+5 Rage
-+5 happiness"
+text = "+5 Rage"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -158,7 +153,70 @@ offset_top = -193.0
 offset_right = 104.0
 offset_bottom = 192.0
 
-[node name="Timer" type="Timer" parent="postGenerator/post1"]
+[node name="Area2D" type="Area2D" parent="postGenerator/post1"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postGenerator/post1/Area2D"]
+position = Vector2(0.5, -0.5)
+scale = Vector2(10.35, 19.25)
+shape = SubResource("RectangleShape2D_8xp80")
+
+[node name="post2" type="Node2D" parent="postGenerator"]
+position = Vector2(1000, 300)
+script = ExtResource("2_0rdsr")
+
+[node name="post_image" type="Sprite2D" parent="postGenerator/post2"]
+position = Vector2(0.5, -89.5)
+texture = ExtResource("10_sp04v")
+
+[node name="ColorRect" type="ColorRect" parent="postGenerator/post2"]
+offset_left = -103.0
+offset_top = 12.0
+offset_right = 104.0
+offset_bottom = 192.0
+color = Color(0.05882353, 0.13333334, 0.16470589, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="postGenerator/post2/ColorRect"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 204.0
+offset_bottom = 177.0
+color = Color(0.627451, 1, 1, 1)
+
+[node name="flavourText" type="Label" parent="postGenerator/post2/ColorRect/ColorRect2"]
+layout_mode = 0
+offset_right = 201.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Rise up against cats! They are evil and shall rule our lives no more!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Emotions" type="Label" parent="postGenerator/post2/ColorRect/ColorRect2"]
+layout_mode = 0
+offset_top = 127.0
+offset_right = 201.0
+offset_bottom = 177.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "+5 Rage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="post2_button" type="Button" parent="postGenerator/post2"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -103.0
+offset_top = -193.0
+offset_right = 104.0
+offset_bottom = 192.0
+
+[node name="Area2D" type="Area2D" parent="postGenerator/post2"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="postGenerator/post2/Area2D"]
+position = Vector2(0.5, -0.5)
+scale = Vector2(10.35, 19.25)
+shape = SubResource("RectangleShape2D_8xp80")
 
 [node name="RefreshButton" type="Sprite2D" parent="."]
 position = Vector2(457.00003, 119.99999)
@@ -258,8 +316,15 @@ press escape to exit"
 label_settings = SubResource("LabelSettings_ihbck")
 autowrap_mode = 2
 
+[connection signal="timeout" from="drop box/Timer" to="drop box" method="_on_timer_timeout"]
 [connection signal="button_down" from="postGenerator/post1/post1_button" to="postGenerator/post1" method="_on_button_button_down"]
 [connection signal="button_up" from="postGenerator/post1/post1_button" to="postGenerator/post1" method="_on_button_button_up"]
-[connection signal="button_up" from="RefreshButton/refresh_button" to="drop box" method="_on_refresh_button_button_up"]
+[connection signal="area_entered" from="postGenerator/post1/Area2D" to="postGenerator/post1" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="postGenerator/post1/Area2D" to="postGenerator/post1" method="_on_area_2d_area_exited"]
+[connection signal="button_down" from="postGenerator/post2/post2_button" to="postGenerator/post2" method="_on_button_button_down"]
+[connection signal="button_up" from="postGenerator/post2/post2_button" to="postGenerator/post2" method="_on_button_button_up"]
+[connection signal="area_entered" from="postGenerator/post2/Area2D" to="postGenerator/post2" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="postGenerator/post2/Area2D" to="postGenerator/post2" method="_on_area_2d_area_exited"]
+[connection signal="button_up" from="RefreshButton/refresh_button" to="drop box" method="_on_refresh_button_up"]
 [connection signal="button_down" from="ColorRect2/ColorRect/Button" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="ColorRect2/ColorRect/Button" to="ColorRect2" method="_on_button_button_down"]
