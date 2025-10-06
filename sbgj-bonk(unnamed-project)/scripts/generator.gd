@@ -4,9 +4,10 @@ extends Node2D
 
 var locations = [Vector2(750,300),Vector2(1000,300)]
 
-#texture image,  string flavourText,  string emotion,  int value,  string emotion2, int value
+#bool selected,  texture image,  string flavourText,  string emotion,  int value,  string emotion2, int value
 #overload for last 2 variables
 # Post Images
+var new_post_0 = [false, preload("res://images/Post Icons/Posts IHATECATS.png"), "Rise up against cats! They are evil and shall rule our lives no more!", "Rage", 5, "", 0]
 var post_0 = [preload("res://prefabs/anti_cat_post.tscn"),false]
 var post_1 = [preload("res://prefabs/barrentwo_post.tscn"),false]
 var post_2 = [preload("res://prefabs/barren_post.tscn"),false]
@@ -36,7 +37,7 @@ var catPostsNum = 24
 var catPosts = [post_0,post_1,post_2,post_3,post_4,post_5,post_6,post_7,post_8,post_9,post_10,post_11,post_12,post_13,post_14,post_15,post_16,post_17,post_18,post_19,post_20,post_21,post_22,post_23]
 var times_generated = 0
 
-func _init():
+func _ready():
 	SelectPost()
 func setUser(_user):
 	user = _user
@@ -59,7 +60,6 @@ func SelectPost():
 			postNum = retrieveAvailablePost(catPosts,postNum) #Gets Post to be displayed
 			#print(postNum)
 			if postNum != null:
-				print(get_tree())
 				get_node("/root/Node2D/user")
 				get_node("post1").show()
 				get_node("post1").setStartPosition(locations[postsToGenerate - postsLeftToGenerate])
