@@ -25,14 +25,14 @@ font_size = 28
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_wi4c7")
 
+[node name="DesktopBackgroundHole" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("4_o6v7o")
+
 [node name="DesktopBackground2" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(576, 324)
 texture = ExtResource("2_5cypo")
-
-[node name="DesktopBackgroundHole" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-texture = ExtResource("4_o6v7o")
 
 [node name="user" type="Node" parent="."]
 script = ExtResource("1_ygxny")
@@ -93,6 +93,7 @@ collision_mask = 2
 priority = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drop box/Area2D"]
+z_index = -1
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_70vka")
 
@@ -101,10 +102,10 @@ wait_time = 1.2999999999999998
 one_shot = true
 
 [node name="postGenerator" type="Node2D" parent="."]
-z_index = 1
 script = ExtResource("5_ipu61")
 
 [node name="post1" type="Node2D" parent="postGenerator"]
+z_index = 1
 position = Vector2(750, 300)
 script = ExtResource("2_0rdsr")
 
@@ -162,6 +163,7 @@ scale = Vector2(10.35, 19.25)
 shape = SubResource("RectangleShape2D_8xp80")
 
 [node name="post2" type="Node2D" parent="postGenerator"]
+z_index = 1
 position = Vector2(1000, 300)
 script = ExtResource("2_0rdsr")
 
@@ -233,7 +235,7 @@ scale = Vector2(0.55892533, 0.9771119)
 [node name="sfx_notif" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_5cypo")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="pause" type="ColorRect" parent="."]
 offset_left = 1094.0
 offset_top = 18.0
 offset_right = 1134.0
@@ -241,7 +243,7 @@ offset_bottom = 58.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("18_ikqpi")
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="ColorRect" parent="pause"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -249,16 +251,16 @@ offset_right = 43.0
 offset_bottom = 43.0
 scale = Vector2(0.84000003, 0.8400012)
 
-[node name="SettingsIcon" type="Sprite2D" parent="ColorRect2/ColorRect"]
+[node name="SettingsIcon" type="Sprite2D" parent="pause/ColorRect"]
 position = Vector2(20, 20)
 texture = ExtResource("14_ihbck")
 
-[node name="SettingsIconLight" type="Sprite2D" parent="ColorRect2/ColorRect"]
+[node name="SettingsIconLight" type="Sprite2D" parent="pause/ColorRect"]
 visible = false
 position = Vector2(20, 20)
 texture = ExtResource("14_8xp80")
 
-[node name="Button" type="Button" parent="ColorRect2/ColorRect"]
+[node name="Button" type="Button" parent="pause/ColorRect"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 8.0
@@ -326,5 +328,5 @@ autowrap_mode = 2
 [connection signal="area_entered" from="postGenerator/post2/Area2D" to="postGenerator/post2" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="postGenerator/post2/Area2D" to="postGenerator/post2" method="_on_area_2d_area_exited"]
 [connection signal="button_up" from="RefreshButton/refresh_button" to="drop box" method="_on_refresh_button_up"]
-[connection signal="button_down" from="ColorRect2/ColorRect/Button" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="ColorRect2/ColorRect/Button" to="ColorRect2" method="_on_button_button_down"]
+[connection signal="button_down" from="pause/ColorRect/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="pause/ColorRect/Button" to="pause" method="_on_button_button_down"]

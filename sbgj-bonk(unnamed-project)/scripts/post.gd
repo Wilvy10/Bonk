@@ -14,17 +14,12 @@ var sfx_notif = Node2D
 var timing = false
 var post = 0
 
-#func _init():
-	#spawn at appropriate place
-	#print(sfx_notif)
-	#startPosition = position
-	#print(startPosition)
-	
+
 
 func _process(delta):
 	if get_node("/root/Node2D/drop box").timing:
 		if global_position.y < dropBoxLocation.y:
-			
+			#code to move post down as it scrolls
 			var movement = (dropBoxLocation.y - global_position.y ) * 4 * delta
 			if movement > 50:
 				movement = 50
@@ -33,10 +28,6 @@ func _process(delta):
 			global_position.y += movement
 			if global_position.y > dropBoxLocation.y:
 				global_position.y = dropBoxLocation.y 
-		#elif (!timing):
-			
-			
-			#print("timer set")
 		
 	if dragging:
 		position = get_global_mouse_position() - _offset
@@ -55,6 +46,7 @@ func _enter_tree() -> void:
 	dropBox = get_node("/root/Node2D/drop box")
 	sfx_notif = get_node("/root/Node2D/sfx_notif")
 
+#when post is picked up
 func _on_button_button_down() -> void:
 	if !onFeed:
 		if selected:
@@ -63,7 +55,7 @@ func _on_button_button_down() -> void:
 		dragging = true
 		_offset = get_global_mouse_position() - global_position
 
-
+#when post is dropped
 func _on_button_button_up() -> void:
 	if !onFeed:
 		dragging = false
@@ -98,33 +90,23 @@ func get_rage():
 func set_rage(_rage):
 	rage= _rage
 
-func set_info(info:Array):
+#retrieves the post data from the array and sets the rage and happiness values 
+#this almost behaves as a constructor except it's called every time the post is changed
+func set_info(_post:Array):
 	set_happiness(0)
 	set_rage(0)
-	get_node("post_image").texture = info[1]
-	get_node("ColorRect/ColorRect2/flavourText").set_text(info[2])
-	if info[3] == "Rage":
-		set_rage(info[4])
-	elif info[3] == "Happiness":
-		set_happiness(info[4])
-	if info[5]=="":
-		get_node("ColorRect/ColorRect2/Emotions").set_text("+" + str(info[4]) + " " + str(info[3]))
+	get_node("post_image").texture = _post[1]
+	get_node("ColorRect/ColorRect2/flavourText").set_text(_post[2])
+	if _post[3] == "Rage":
+		set_rage(_post[4])
+	elif _post[3] == "Happiness":
+		set_happiness(_post[4])
+	if _post[5]=="":
+		get_node("ColorRect/ColorRect2/Emotions").set_text("+" + str(_post[4]) + " " + str(_post[3]))
 		
 	else:
-		get_node("ColorRect/ColorRect2/Emotions").set_text("+" + str(info[4]) + " " + str(info[3]) + "\n+" + str(info[6]) + " " + str(info[5]))
-		if info[5] == "Rage":
-			set_rage(info[6])
-		elif info[5] == "Happiness":
-			set_happiness(info[6])
-
-
-func _on_timer_timeout() -> void:
-	#after timer 
-	#print("timer finished")
-	timing = false
-	selected = false
-	#dropBox.releasePostLocation(dropBoxLocation)
-	get_node("..").resetAvailablePosts()
-	get_node("..").generate()
-	
-	
+		get_node("ColorRect/ColorRect2/Emotions").set_text("+" + str(_post[4]) + " " + str(_post[3]) + "\n+" + str(_post[6]) + " " + str(_post[5]))
+		if _post[5] == "Rage":
+			set_rage(_post[6])
+		elif _post[5] == "Happiness":
+			set_happiness(_post[6])

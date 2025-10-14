@@ -41,11 +41,13 @@ func _on_refresh_button_up() -> void:
 			get_node("/root/Node2D/user").AddHappiness(get_node("../postGenerator/post1").get_happiness())
 			get_node("/root/Node2D/user").AddRage(get_node("../postGenerator/post1").get_rage())
 			get_node("../postGenerator/post1").transform.origin -= transform.y * 500
+			get_node("../postGenerator/post1").set_z_index(-1)
 			get_node("../postGenerator/post2").hide()
 		elif post_stored == 2:
 			get_node("/root/Node2D/user").AddHappiness(get_node("../postGenerator/post2").get_happiness())
 			get_node("/root/Node2D/user").AddRage(get_node("../postGenerator/post2").get_rage())
 			get_node("../postGenerator/post2").transform.origin -= transform.y * 500
+			get_node("../postGenerator/post2").set_z_index(-1)
 			get_node("../postGenerator/post1").hide()
 		timing = true
 		#timer is for scrolling post
@@ -56,4 +58,6 @@ func _on_refresh_button_up() -> void:
 func _on_timer_timeout() -> void:
 	timing = false
 	post_stored = 0
+	get_node("../postGenerator/post1").set_z_index(1)
+	get_node("../postGenerator/post2").set_z_index(1)
 	get_node("../postGenerator").generate()
