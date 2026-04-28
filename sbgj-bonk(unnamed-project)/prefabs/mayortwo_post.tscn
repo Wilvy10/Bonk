@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_nio4r"]
 [ext_resource type="Texture2D" uid="uid://besetnkdbkvif" path="res://images/Post Icons/Post Office.png" id="2_h7bv4"]
-[ext_resource type="Script" path="res://prefabs/post_mayor_two.gd" id="3_nio4r"]
+[ext_resource type="Script" uid="uid://cvxgue85flon" path="res://prefabs/post_mayor_two.gd" id="3_nio4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)
@@ -49,7 +49,7 @@ modulate = Color(1, 1, 1, 0)
 offset_left = -103.0
 offset_top = -150.0
 offset_right = -95.0
-offset_bottom = -142.0
+offset_bottom = -141.22925
 scale = Vector2(26.000011, 37.05496)
 
 [node name="Area2D" type="Area2D" parent="."]

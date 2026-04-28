@@ -1,6 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://ch3su8g5bqec0"]
+[gd_scene load_steps=21 format=3 uid="uid://ch3su8g5bqec0"]
 
-[ext_resource type="Texture2D" uid="uid://cg2405b3teyai" path="res://images/Person Icons/cat_person.png" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://b7ok75uteft6b" path="res://scripts/main.gd" id="1_wi4c7"]
 [ext_resource type="Script" uid="uid://bvjf2gjqce04" path="res://scripts/user.gd" id="1_ygxny"]
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="2_0rdsr"]
@@ -39,6 +38,13 @@ texture = ExtResource("4_o6v7o")
 
 [node name="user" type="Node" parent="."]
 script = ExtResource("1_ygxny")
+
+[node name="ColorRect" type="ColorRect" parent="user"]
+offset_left = 46.0
+offset_top = 82.0
+offset_right = 304.0
+offset_bottom = 305.0
+color = Color(0, 0, 0, 1)
 
 [node name="user_details" type="Label" parent="user"]
 offset_left = 50.0
@@ -82,37 +88,21 @@ position = Vector2(170, 338)
 polygon = PackedVector2Array(-112, -244, 102, -245, 104, 235, -112, 235)
 
 [node name="PersonClNeutral" type="Sprite2D" parent="user"]
-z_index = 1
 position = Vector2(175.00002, 194)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("7_ihbck")
 
 [node name="PersonClHappy" type="Sprite2D" parent="user"]
 visible = false
-z_index = 1
 position = Vector2(175.00002, 194)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("7_ikqpi")
 
 [node name="PersonClAngry" type="Sprite2D" parent="user"]
 visible = false
-z_index = 1
 position = Vector2(175.00002, 194)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("8_5luka")
-
-[node name="ColorRect" type="ColorRect" parent="user"]
-offset_left = 46.0
-offset_top = 82.0
-offset_right = 304.0
-offset_bottom = 305.0
-color = Color(0, 0, 0, 1)
-
-[node name="CatPerson" type="Sprite2D" parent="user"]
-visible = false
-position = Vector2(176.50002, 196)
-scale = Vector2(0.10980903, 0.16666666)
-texture = ExtResource("1_d2op2")
 
 [node name="post" type="Polygon2D" parent="."]
 visible = false
@@ -156,25 +146,6 @@ collision_layer = 2
 
 [node name="postCollision" type="CollisionPolygon2D" parent="post/Area2D"]
 polygon = PackedVector2Array(-101.23346, -83, -101.23346, 139, 134.97772, 137, 137.30487, -84)
-
-[node name="headline" type="Polygon2D" parent="."]
-visible = false
-z_index = 2
-position = Vector2(696, 399)
-scale = Vector2(0.92703867, 1)
-polygon = PackedVector2Array(-100, -82, 131, -82, 133, 81, -99, 81)
-
-[node name="headline_text" type="Label" parent="headline"]
-offset_left = -98.16199
-offset_top = -80.0
-offset_right = 132.36118
-offset_bottom = 76.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 15
-text = "cat shelters in [local area] are overrun after christmas magic disappears. https://news.com/catpocalypse_after_christmas/"
-autowrap_mode = 3
-clip_text = true
-metadata/_edit_use_anchors_ = true
 
 [node name="drop box" type="Polygon2D" parent="."]
 position = Vector2(192, 113)
@@ -227,7 +198,7 @@ scale = Vector2(0.55892533, 0.9771119)
 [node name="sfx_notif" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_5cypo")
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="Pause" type="ColorRect" parent="."]
 offset_left = 1094.0
 offset_top = 18.0
 offset_right = 1134.0
@@ -235,7 +206,7 @@ offset_bottom = 58.0
 color = Color(0, 0, 0, 1)
 script = ExtResource("13_sp04v")
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect2"]
+[node name="ColorRect" type="ColorRect" parent="Pause"]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 3.0
@@ -243,16 +214,16 @@ offset_right = 43.0
 offset_bottom = 43.0
 scale = Vector2(0.84000003, 0.8400012)
 
-[node name="SettingsIcon" type="Sprite2D" parent="ColorRect2/ColorRect"]
+[node name="SettingsIcon" type="Sprite2D" parent="Pause/ColorRect"]
 position = Vector2(20, 20)
 texture = ExtResource("14_ihbck")
 
-[node name="SettingsIconLight" type="Sprite2D" parent="ColorRect2/ColorRect"]
+[node name="SettingsIconLight" type="Sprite2D" parent="Pause/ColorRect"]
 visible = false
 position = Vector2(20, 20)
 texture = ExtResource("14_8xp80")
 
-[node name="Button" type="Button" parent="ColorRect2/ColorRect"]
+[node name="Button" type="Button" parent="Pause/ColorRect"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_right = 8.0
@@ -320,5 +291,5 @@ autowrap_mode = 2
 [connection signal="mouse_entered" from="drop box/Area2D" to="post" method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="drop box/Area2D" to="post" method="_on_area_2d_mouse_exited"]
 [connection signal="button_up" from="RefreshButton/refresh_button" to="drop box" method="_on_refresh_button_button_up"]
-[connection signal="button_down" from="ColorRect2/ColorRect/Button" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="ColorRect2/ColorRect/Button" to="ColorRect2" method="_on_button_button_down"]
+[connection signal="button_down" from="Pause/ColorRect/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="Pause/ColorRect/Button" to="Pause" method="_on_button_button_down"]

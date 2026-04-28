@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d0yl56gloome3" path="res://scripts/post.gd" id="1_ahxdr"]
 [ext_resource type="Texture2D" uid="uid://ner74k1wv5tx" path="res://images/Post Icons/Post OceanRising.png" id="2_p7m8t"]
-[ext_resource type="Script" path="res://prefabs/post_flood_two.gd" id="3_ahxdr"]
+[ext_resource type="Script" uid="uid://che0xjat2cuyd" path="res://prefabs/post_flood_two.gd" id="3_ahxdr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tc63t"]
 size = Vector2(19.235422, 19.63567)
@@ -19,7 +19,7 @@ script = ExtResource("3_ahxdr")
 offset_left = -103.00001
 offset_top = 56.0
 offset_right = 100.99999
-offset_bottom = 136.99998
+offset_bottom = 142.68524
 scale = Vector2(1.0145473, 1.1074551)
 color = Color(0.05882353, 0.13333334, 0.16470589, 1)
 
@@ -49,7 +49,7 @@ modulate = Color(1, 1, 1, 0)
 offset_left = -103.0
 offset_top = -150.0
 offset_right = -95.0
-offset_bottom = -142.0
+offset_bottom = -141.84995
 scale = Vector2(26.000011, 37.05496)
 
 [node name="Area2D" type="Area2D" parent="."]
